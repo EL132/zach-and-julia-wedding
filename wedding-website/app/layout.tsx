@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+import BotanicalBackground from "./components/BotanicalBackground";
 import SiteHeader from "./components/SiteHeader";
 
 const serif = Cormorant_Garamond({
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${serif.variable} ${sans.variable} h-full antialiased`}>
       <body className="min-h-full bg-[#F8F4EA] text-[#2D2923]">
+        <BotanicalBackground />
         <SiteHeader />
         {children}
       </body>
