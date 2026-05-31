@@ -1,14 +1,18 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export default function BotanicalBackground() {
+  const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
   const topLeftY = useTransform(scrollYProgress, [0, 1], [0, 18]);
   const topRightY = useTransform(scrollYProgress, [0, 1], [0, -16]);
   const bottomLeftY = useTransform(scrollYProgress, [0, 1], [0, 14]);
   const bottomRightY = useTransform(scrollYProgress, [0, 1], [0, -12]);
+
+  if (pathname === "/") return null;
 
   return (
     <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
