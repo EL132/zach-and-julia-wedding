@@ -1,13 +1,10 @@
-import PageHeader from "@/app/components/PageHeader";
-
 export default function RegistryPage() {
   return (
-    <main className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-8">
-      <PageHeader title="Gift Registry" subtitle="A simple page for thoughtful gift details." />
-      <section className="mt-12 rounded-[2rem] border border-[#E6D8C6] bg-[#EFE7D8] p-8">
-        <p className="max-w-2xl text-base leading-8 text-[#2D2923]/85">
-          Registry information will be added here so guests have easy access to our preferred gift options.
-        </p>
+    <main className="mx-auto flex min-h-[60vh] w-full max-w-6xl items-center px-6 py-16 sm:px-8">
+      <section className="w-full rounded-lg border border-[#E6D8C6] bg-[#EFE7D8] p-10 text-center">
+        <h1 className="text-4xl font-serif leading-tight text-[#35452C] sm:text-5xl">
+          Coming soon
+        </h1>
       </section>
     </main>
   );

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import fs from 'fs';
 import path from 'path';
+import { chatContent, couple } from '@/app/content/site';
 
 const openai = new OpenAI({
   apiKey: process.env.OPEN_AI_API_KEY,
@@ -61,8 +62,11 @@ async function retrieveRelevantChunks(question: string): Promise<string[]> {
     }
   }
 
-  allChunks.sort((a, b) => b.score - a.score);
-  return allChunks.slice(0, 3).map(chunk => chunk.content);
+  return allChunks
+    .filter((chunk) => chunk.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
+    .map(chunk => chunk.content);
 }
 
 export async function POST(request: NextRequest) {
@@ -74,11 +78,16 @@ export async function POST(request: NextRequest) {
     }
 
     const relevantChunks = await retrieveRelevantChunks(message);
+
+    if (relevantChunks.length === 0) {
+      return NextResponse.json({ ok: true, answer: chatContent.fallbackResponse });
+    }
+
     const context = relevantChunks.join('\n\n');
 
-    const systemPrompt = `You are the guest assistant for Julia and Zach's wedding website.
+    const systemPrompt = `You are the guest assistant for ${couple.possessiveName} wedding website.
 
-Answer warmly, briefly, and clearly. Use only the provided wedding information. Do not invent details. If the provided context does not contain enough information to answer the question, say that the details are still being finalized and suggest checking back closer to the wedding date.
+Answer warmly, briefly, and clearly. Use only the provided wedding information. Do not invent details. If the provided context does not contain enough information to answer the question, respond exactly with: "${chatContent.fallbackResponse}"
 
 Keep answers under 4 sentences unless the guest asks for a list or step-by-step instructions.`;
 
@@ -92,7 +101,7 @@ Keep answers under 4 sentences unless the guest asks for a list or step-by-step 
       temperature: 0.7,
     });
 
-    const answer = response.choices[0]?.message?.content?.trim() || 'I apologize, but I couldn\'t generate a response.';
+    const answer = response.choices[0]?.message?.content?.trim() || chatContent.fallbackResponse;
 
     return NextResponse.json({ ok: true, answer });
   } catch (error) {

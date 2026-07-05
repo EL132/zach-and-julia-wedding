@@ -1,6 +1,6 @@
 # Travel Information
 
-The wedding will take place in Stockholm, Sweden. Travel information will be added as details are finalized.
+The wedding will take place in Helsingborg, Sweden. Travel information will be added as details are finalized.
 
 Guests should check passport validity and international travel requirements before booking.
 

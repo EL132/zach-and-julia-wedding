@@ -4,24 +4,27 @@ import { useEffect, useId, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/events", label: "Weekend" },
-  { href: "/travel", label: "Travel" },
-  { href: "/registry", label: "Registry" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/faqs", label: "FAQs" },
-  { href: "/rsvp", label: "RSVP", emphasized: true },
-];
+import { couple, navigationItems, type NavItem } from "@/app/content/site";
 
 const menuEase = [0.22, 1, 0.36, 1] as const;
+
+function isHrefActive(href: string, pathname: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+function isNavItemActive(item: NavItem, pathname: string) {
+  if (item.href && isHrefActive(item.href, pathname)) return true;
+  if (item.children?.some((child) => isHrefActive(child.href, pathname))) return true;
+  return item.activeHrefs?.some((href) => isHrefActive(href, pathname)) ?? false;
+}
 
 export default function SiteHeader() {
   const pathname = usePathname();
   const menuId = useId();
   const shouldReduceMotion = useReducedMotion();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({});
   const isHome = pathname === "/";
   const useLightButton = isHome || menuOpen;
 
@@ -53,6 +56,21 @@ export default function SiteHeader() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    setOpenGroups((current) => {
+      let next = current;
+      for (const item of navigationItems) {
+        if (!item.children || !isNavItemActive(item, pathname) || current[item.label]) continue;
+        next = { ...next, [item.label]: true };
+      }
+      return next;
+    });
+  }, [menuOpen, pathname]);
+
+  const closeMenu = () => setMenuOpen(false);
 
   const buttonTone = useLightButton
     ? "border-[#F5F2EB]/30 text-[#F5F2EB] hover:border-[#F5F2EB]/60 hover:bg-[#F5F2EB]/10 focus-visible:ring-[#F5F2EB]/50"
@@ -119,35 +137,95 @@ export default function SiteHeader() {
               <p className="text-xs uppercase tracking-[0.55em] text-[#F5F2EB]/60">Navigation</p>
 
               <nav className="mt-8 space-y-[clamp(0.65rem,1.8vh,1.25rem)]" aria-label="Primary navigation">
-                {navLinks.map((item, index) => (
-                  <motion.div
-                    key={item.href}
-                    initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 6 }}
-                    transition={{
-                      duration: shouldReduceMotion ? 0 : 0.34,
-                      delay: shouldReduceMotion ? 0 : 0.08 + index * 0.045,
-                      ease: menuEase,
-                    }}
-                  >
-                    <Link
-                      href={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className={`block font-serif text-[clamp(2rem,5.1vh,3.35rem)] leading-[0.94] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5F2EB]/50 ${
-                        item.emphasized
-                          ? "text-[#F5F2EB] underline decoration-[#D8B8A6]/50 decoration-1 underline-offset-[0.18em]"
-                          : "text-[#E7E3D8]/90 hover:text-[#F5F2EB]"
-                      }`}
+                {navigationItems.map((item, index) => {
+                  const itemIsActive = isNavItemActive(item, pathname);
+                  const groupOpen = openGroups[item.label] ?? itemIsActive;
+                  const groupId = `${menuId}-${item.label.toLowerCase().replace(/\s+/g, "-")}`;
+                  const mainItemTone =
+                    item.emphasized || itemIsActive
+                      ? "text-[#F5F2EB] underline decoration-[#D8B8A6]/50 decoration-1 underline-offset-[0.18em]"
+                      : "text-[#E7E3D8]/90 hover:text-[#F5F2EB]";
+
+                  return (
+                    <motion.div
+                      key={item.href ?? item.label}
+                      initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 6 }}
+                      transition={{
+                        duration: shouldReduceMotion ? 0 : 0.34,
+                        delay: shouldReduceMotion ? 0 : 0.08 + index * 0.045,
+                        ease: menuEase,
+                      }}
                     >
-                      {item.label}
-                    </Link>
-                  </motion.div>
-                ))}
+                      {item.children?.length ? (
+                        <div>
+                          <button
+                            type="button"
+                            aria-expanded={groupOpen}
+                            aria-controls={groupId}
+                            onClick={() =>
+                              setOpenGroups((current) => ({
+                                ...current,
+                                [item.label]: !groupOpen,
+                              }))
+                            }
+                            className={`flex w-full items-center justify-between gap-4 text-left font-serif text-[clamp(2rem,5.1vh,3.35rem)] leading-[0.94] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5F2EB]/50 ${mainItemTone}`}
+                          >
+                            <span>{item.label}</span>
+                            <span className="text-2xl leading-none text-[#F5F2EB]/60" aria-hidden="true">
+                              {groupOpen ? "-" : "+"}
+                            </span>
+                          </button>
+
+                          <AnimatePresence initial={false}>
+                            {groupOpen ? (
+                              <motion.div
+                                id={groupId}
+                                className="mt-4 space-y-3 border-l border-[#D8B8A6]/30 pl-5"
+                                initial={shouldReduceMotion ? false : { height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
+                                transition={{ duration: shouldReduceMotion ? 0 : 0.24, ease: menuEase }}
+                              >
+                                {item.children.map((child) => {
+                                  const childIsActive = isHrefActive(child.href, pathname);
+
+                                  return (
+                                    <Link
+                                      key={child.href}
+                                      href={child.href}
+                                      onClick={closeMenu}
+                                      className={`block font-serif text-[clamp(1.25rem,2.6vh,1.75rem)] leading-tight transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5F2EB]/50 ${
+                                        childIsActive
+                                          ? "text-[#F5F2EB] underline decoration-[#D8B8A6]/50 decoration-1 underline-offset-[0.2em]"
+                                          : "text-[#E7E3D8]/70 hover:text-[#F5F2EB]"
+                                      }`}
+                                    >
+                                      {child.label}
+                                    </Link>
+                                  );
+                                })}
+                              </motion.div>
+                            ) : null}
+                          </AnimatePresence>
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href ?? "/"}
+                          onClick={closeMenu}
+                          className={`block font-serif text-[clamp(2rem,5.1vh,3.35rem)] leading-[0.94] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5F2EB]/50 ${mainItemTone}`}
+                        >
+                          {item.label}
+                        </Link>
+                      )}
+                    </motion.div>
+                  );
+                })}
               </nav>
 
               <div className="mt-auto pt-8 text-xs uppercase tracking-[0.35em] text-[#F5F2EB]/50">
-                Zach & Julia
+                {couple.displayName}
               </div>
             </motion.aside>
           </motion.div>

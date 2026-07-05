@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import RevealImage from "@/app/components/RevealImage";
+import { homePageContent } from "@/app/content/site";
 
 const editorialImages = {
   hero: "/home-page/cover-photo.jpg",
@@ -8,7 +9,6 @@ const editorialImages = {
   tall: "/home-page/home-page-2.jpg",
   offset: "/home-page/home-page-1.jpg",
   calm: "/home-page/home-page-4.jpg",
-  estate: "/home-page/mary-hill-estate-drawing.png",
 };
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
       <section className="relative h-screen overflow-hidden">
         <Image
           src={editorialImages.hero}
-          alt="Zach and Julia walking along the estate gardens"
+          alt="Julia & Zach walking together outdoors"
           fill
           sizes="100vw"
           className="object-cover"
@@ -26,13 +26,16 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 px-6 pb-12 text-center text-[#F1EFE8] sm:px-8">
           <p className="text-xs uppercase tracking-[0.38em] text-[#E4E1D8]/80">
-            A weekend in the gardens
+            {homePageContent.hero.eyebrow}
           </p>
-          <h1 className="mx-auto mt-5 max-w-3xl text-5xl font-serif uppercase leading-[0.92] sm:text-7xl">
-            Zach & Julia
+          <h1 className="mx-auto mt-5 max-w-3xl text-5xl font-serif leading-[0.92] sm:text-7xl">
+            {homePageContent.hero.title}
           </h1>
-          <p className="mt-5 text-xs uppercase tracking-[0.45em] text-[#E4E1D8]/70 sm:text-sm">
-            August 2027 / Helsingborg, Sweden
+          <p className="mt-5 text-sm tracking-[0.18em] text-[#E4E1D8]/80 sm:text-base">
+            {homePageContent.hero.subtitle}
+          </p>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[#F1EFE8]/86 sm:text-lg">
+            {homePageContent.hero.supportingCopy}
           </p>
         </div>
       </section>
@@ -41,9 +44,9 @@ export default function Home() {
         <section className="grid gap-8 lg:grid-cols-[1.45fr_0.85fr]">
           <RevealImage
             src={editorialImages.wide}
-            alt="Wide editorial view of the estate grounds"
-            width={1600}
-            height={1120}
+            alt="Julia & Zach standing together on stone steps"
+            width={1535}
+            height={2302}
             reveal="left"
           />
 
@@ -57,13 +60,13 @@ export default function Home() {
             />
             <div className="max-w-xl">
               <p className="text-xs uppercase tracking-[0.38em] text-[#6E6A61]">
-                The story begins
+                {homePageContent.story.eyebrow}
               </p>
               <h2 className="mt-5 text-3xl font-serif leading-tight text-[#0E0D0B] sm:text-4xl">
-                Quiet moments, stone terraces, and a soft hush before the celebration.
+                {homePageContent.story.title}
               </h2>
               <p className="mt-5 text-base leading-8 text-[#2D2923]/85">
-                Our weekend is gathered around the house and glasshouse, where every path feels intentional and every light is held for the two of us.
+                {homePageContent.story.body}
               </p>
             </div>
           </div>
@@ -80,10 +83,10 @@ export default function Home() {
 
           <div className="max-w-md">
             <p className="text-xs uppercase tracking-[0.38em] text-[#6E6A61]">
-              A refined story
+              {homePageContent.galleryNote.eyebrow}
             </p>
             <p className="mt-5 text-xl font-serif leading-10 text-[#2D2923]">
-              Each photograph is a chapter in a quiet day: the light between leaves, the stillness of stone, the cadence of footsteps toward the house.
+              {homePageContent.galleryNote.body}
             </p>
           </div>
         </section>
@@ -99,26 +102,13 @@ export default function Home() {
         </section>
       </main>
 
-      <section className="bg-[#F8F4EA] py-16">
-        <div className="mx-auto bg-white" style={{ width: "min(87.5%, 117.44vh)" }}>
-          <RevealImage
-            src={editorialImages.estate}
-            alt="Maryhill Estate drawing with warm paper tones"
-            width={2568}
-            height={1640}
-            className="w-full"
-            reveal="center"
-          />
-        </div>
-      </section>
-
       <section className="bg-[#0a0a08] px-6 py-16 sm:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-[#E6E2D6]/70">
-            The weekend awaits
+            {homePageContent.cta.eyebrow}
           </p>
           <h2 className="mt-5 text-4xl font-serif leading-tight text-[#F5F2EB] sm:text-5xl">
-            Join us at Maryhill Estate
+            {homePageContent.cta.title}
           </h2>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
@@ -128,7 +118,7 @@ export default function Home() {
               RSVP
             </Link>
             <Link
-              href="/events"
+              href="/schedule/weekend"
               className="inline-flex rounded-full border border-[#F5F2EB]/25 bg-[#F5F2EB]/5 px-8 py-3 text-sm uppercase tracking-[0.35em] text-[#F5F2EB] transition hover:bg-[#F5F2EB]/10"
             >
               Weekend details

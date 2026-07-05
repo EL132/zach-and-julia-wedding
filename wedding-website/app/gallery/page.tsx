@@ -3,13 +3,10 @@ import Image from "next/image";
 
 const galleryImages = [
   "/gallery/goober.jpg",
-  "/gallery/IMG_1135.jpg",
   "/gallery/IMG_2712.jpg",
   "/gallery/IMG_2795.JPG",
   "/gallery/IMG_7069.jpg",
-  "/gallery/IMG_7839.jpg",
   "/gallery/IMG_8580.jpg",
-  "/gallery/IMG_8814.JPG",
 ];
 
 export default function GalleryPage() {

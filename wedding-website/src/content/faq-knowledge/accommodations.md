@@ -1,6 +1,6 @@
 # Accommodations
 
-Accommodation recommendations for Stockholm will be added as details are finalized.
+Accommodation recommendations for Helsingborg will be added as details are finalized.
 
 Guests should check passport validity and international travel requirements before booking.
 

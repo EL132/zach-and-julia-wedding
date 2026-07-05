@@ -201,7 +201,7 @@ export default function RSVPForm() {
 
       <div>
         <label htmlFor="optionalStockholmEvents" className="block text-sm font-medium text-[#2D2923]">
-          Optional Stockholm Events/Interests
+          Optional Week-of Events/Interests
         </label>
         <textarea
           id="optionalStockholmEvents"
