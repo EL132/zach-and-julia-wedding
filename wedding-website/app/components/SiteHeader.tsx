@@ -81,7 +81,7 @@ export default function SiteHeader() {
 
   return (
     <>
-      <header className="fixed left-4 top-4 z-50 bg-transparent sm:left-6 sm:top-6">
+      <header className="fixed left-4 top-4 z-[120] bg-transparent sm:left-6 sm:top-6">
         <div>
           <button
             type="button"
@@ -117,7 +117,7 @@ export default function SiteHeader() {
         {menuOpen ? (
           <motion.div
             key="site-menu"
-            className="fixed inset-0 z-40 overflow-hidden"
+            className="fixed inset-0 z-[110] overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
