@@ -66,6 +66,26 @@ export const navigationItems: NavItem[] = [
   { href: "/faqs", label: "FAQs" },
 ];
 
+export const rsvpContent = {
+  eyebrow: "JULIA & ZACH · MARYHILL ESTATE",
+  title: "Kindly Reply",
+  intro:
+    "We would be honored to celebrate with you. Please let us know your plans for the weekend.",
+  card: {
+    label: "RSVP",
+    venue: "Maryhill Estate",
+    location: "Helsingborg, Sweden",
+    date: "August 2027",
+    responseLabel: "Kindly respond by",
+    responseDate: "Date coming soon",
+    note: "Your response helps us prepare the weekend with care.",
+  },
+  success: {
+    title: "Thank you — your RSVP has been received.",
+    body: "We are so grateful to celebrate with you.",
+  },
+};
+
 export const chatContent = {
   pageEyebrow: "JULIA & ZACH · MARYHILL ESTATE",
   pageTitle: "Guest Questions",

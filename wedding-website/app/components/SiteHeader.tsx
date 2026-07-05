@@ -81,8 +81,8 @@ export default function SiteHeader() {
 
   return (
     <>
-      <header className={isHome ? "absolute inset-x-0 top-0 z-50 bg-transparent" : "relative z-50 bg-transparent"}>
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8">
+      <header className="fixed left-4 top-4 z-50 bg-transparent sm:left-6 sm:top-6">
+        <div>
           <button
             type="button"
             aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
@@ -110,8 +110,6 @@ export default function SiteHeader() {
               />
             </span>
           </button>
-
-          <div className="h-12 w-12" aria-hidden="true" />
         </div>
       </header>
 
@@ -144,10 +142,14 @@ export default function SiteHeader() {
                   const itemIsActive = isNavItemActive(item, pathname);
                   const groupOpen = openGroups[item.label] ?? itemIsActive;
                   const groupId = `${menuId}-${item.label.toLowerCase().replace(/\s+/g, "-")}`;
-                  const mainItemTone =
-                    item.emphasized || itemIsActive
-                      ? "text-[#F5F2EB] underline decoration-[#D8B8A6]/50 decoration-1 underline-offset-[0.18em]"
+                  const mainItemTone = itemIsActive
+                    ? "text-[#F5F2EB] underline decoration-[#D8B8A6]/50 decoration-1 underline-offset-[0.18em]"
+                    : item.emphasized
+                      ? "text-[#F5F2EB] hover:text-[#F5F2EB]"
                       : "text-[#E7E3D8]/90 hover:text-[#F5F2EB]";
+                  const parentItemTone = itemIsActive
+                    ? "!text-[#F5F2EB] underline decoration-[#D8B8A6]/50 decoration-1 underline-offset-[0.18em]"
+                    : "!text-[#E7E3D8] hover:!text-[#F5F2EB]";
 
                   return (
                     <motion.div
@@ -173,10 +175,10 @@ export default function SiteHeader() {
                                 [item.label]: !groupOpen,
                               }))
                             }
-                            className={`flex w-full items-center justify-between gap-4 text-left font-serif text-[clamp(2rem,5.1vh,3.35rem)] leading-[0.94] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5F2EB]/50 ${mainItemTone}`}
+                            className={`flex w-full items-center justify-between gap-4 text-left font-serif text-[clamp(2rem,5.1vh,3.35rem)] leading-[0.94] transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5F2EB]/50 ${parentItemTone}`}
                           >
                             <span>{item.label}</span>
-                            <span className="text-2xl leading-none text-[#F5F2EB]/60" aria-hidden="true">
+                            <span className="text-2xl leading-none !text-[#E7E3D8]" aria-hidden="true">
                               {groupOpen ? "-" : "+"}
                             </span>
                           </button>

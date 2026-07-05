@@ -60,14 +60,12 @@ export default function GalleryExperience({ chapters }: GalleryExperienceProps) 
   const [activeChapterId, setActiveChapterId] = useState<GalleryChapterId | null>(null);
   const [focusedChapterId, setFocusedChapterId] = useState<GalleryChapterId | null>(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [photoVisible, setPhotoVisible] = useState(true);
 
   const activeChapter = useMemo(
     () => chapters.find((chapter) => chapter.id === activeChapterId) ?? null,
     [activeChapterId, chapters],
   );
 
-  const activeImage = activeChapter?.images[activeImageIndex] ?? null;
   const previewChapterId = focusedChapterId ?? activeChapterId;
   const dividerPosition =
     previewChapterId === "proposal" ? "62%" : previewChapterId === "engagement" ? "38%" : "50%";
@@ -111,18 +109,6 @@ export default function GalleryExperience({ chapters }: GalleryExperienceProps) 
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [goToNext, goToPrevious, phase, returnToSelect]);
 
-  useEffect(() => {
-    if (!activeImage || prefersReducedMotion) {
-      setPhotoVisible(true);
-      return;
-    }
-
-    setPhotoVisible(false);
-    const frame = window.requestAnimationFrame(() => setPhotoVisible(true));
-
-    return () => window.cancelAnimationFrame(frame);
-  }, [activeImage, prefersReducedMotion]);
-
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#F8F4EA]">
       <GalleryHomeLink />
@@ -144,7 +130,6 @@ export default function GalleryExperience({ chapters }: GalleryExperienceProps) 
             key={`story-${activeChapter.id}`}
             chapter={activeChapter}
             imageIndex={activeImageIndex}
-            photoVisible={photoVisible}
             prefersReducedMotion={prefersReducedMotion}
             useSharedTransition={useSharedTransition}
             onBack={returnToSelect}
@@ -364,7 +349,6 @@ function MobileChapterCard({ chapter, onOpen }: MobileChapterCardProps) {
 type StoryViewerProps = {
   chapter: GalleryChapter;
   imageIndex: number;
-  photoVisible: boolean;
   prefersReducedMotion: boolean;
   useSharedTransition: boolean;
   onBack: () => void;
@@ -375,7 +359,6 @@ type StoryViewerProps = {
 function StoryViewer({
   chapter,
   imageIndex,
-  photoVisible,
   prefersReducedMotion,
   useSharedTransition,
   onBack,
@@ -413,24 +396,13 @@ function StoryViewer({
       exit={{ opacity: 0 }}
       transition={prefersReducedMotion ? { duration: 0 } : sharedTransition}
     >
-      <motion.div
-        layoutId={useSharedTransition && imageIndex === 0 ? `gallery-cover-${chapter.id}` : undefined}
-        transition={sharedTransition}
-        className="relative min-h-[64vh] overflow-hidden bg-[#1A1712] lg:min-h-screen"
-      >
-        <Image
-          key={image.src}
-          src={image.src}
-          alt={image.alt}
-          fill
-          sizes="(min-width: 1024px) 64vw, 100vw"
-          priority
-          className={`object-cover transition-[opacity,transform] duration-700 ease-out ${
-            photoVisible ? "translate-x-0 opacity-100" : "translate-x-2 opacity-0"
-          }`}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1712]/16 to-transparent" aria-hidden="true" />
-      </motion.div>
+      <StoryPhoto
+        chapterId={chapter.id}
+        image={image}
+        imageIndex={imageIndex}
+        prefersReducedMotion={prefersReducedMotion}
+        useSharedTransition={useSharedTransition}
+      />
 
       <motion.aside
         className="flex items-center border-t border-[#A8B58A]/45 bg-[#EFE7D8] px-6 py-12 lg:min-h-screen lg:border-l lg:border-t-0 lg:px-10"
@@ -475,5 +447,80 @@ function StoryViewer({
         </div>
       </motion.aside>
     </motion.section>
+  );
+}
+
+type StoryPhotoProps = {
+  chapterId: GalleryChapterId;
+  image: GalleryImage;
+  imageIndex: number;
+  prefersReducedMotion: boolean;
+  useSharedTransition: boolean;
+};
+
+function StoryPhoto({ chapterId, image, imageIndex, prefersReducedMotion, useSharedTransition }: StoryPhotoProps) {
+  const [displayedImage, setDisplayedImage] = useState(image);
+  const [incomingImage, setIncomingImage] = useState<GalleryImage | null>(null);
+  const [incomingLoaded, setIncomingLoaded] = useState(false);
+
+  useEffect(() => {
+    if (image.src === displayedImage.src) return;
+
+    if (prefersReducedMotion) {
+      setDisplayedImage(image);
+      setIncomingImage(null);
+      setIncomingLoaded(false);
+      return;
+    }
+
+    setIncomingImage(image);
+    setIncomingLoaded(false);
+  }, [displayedImage.src, image, prefersReducedMotion]);
+
+  useEffect(() => {
+    if (!incomingImage || !incomingLoaded) return;
+
+    const timeout = window.setTimeout(() => {
+      setDisplayedImage(incomingImage);
+      setIncomingImage(null);
+      setIncomingLoaded(false);
+    }, 640);
+
+    return () => window.clearTimeout(timeout);
+  }, [incomingImage, incomingLoaded]);
+
+  return (
+    <motion.div
+      layoutId={useSharedTransition && imageIndex === 0 ? `gallery-cover-${chapterId}` : undefined}
+      transition={sharedTransition}
+      className="relative min-h-[64vh] overflow-hidden bg-[#EFE7D8] lg:min-h-screen"
+    >
+      <Image
+        key={`displayed-${displayedImage.src}`}
+        src={displayedImage.src}
+        alt={displayedImage.alt}
+        fill
+        sizes="(min-width: 1024px) 64vw, 100vw"
+        priority
+        className="object-cover"
+      />
+
+      {incomingImage ? (
+        <Image
+          key={`incoming-${incomingImage.src}`}
+          src={incomingImage.src}
+          alt={incomingImage.alt}
+          fill
+          sizes="(min-width: 1024px) 64vw, 100vw"
+          priority
+          onLoad={() => setIncomingLoaded(true)}
+          className={`object-cover transition-opacity duration-[640ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            incomingLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ) : null}
+
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1A1712]/16 to-transparent" aria-hidden="true" />
+    </motion.div>
   );
 }

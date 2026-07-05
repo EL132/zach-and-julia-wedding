@@ -1,6 +1,8 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
+import { rsvpContent } from "@/app/content/site";
 
 interface RSVPData {
   name: string;
@@ -15,6 +17,11 @@ interface RSVPData {
   message: string;
   honeypot: string;
 }
+
+const labelClass = "block text-xs font-medium uppercase tracking-[0.16em] text-[#35452C]";
+const fieldClass =
+  "mt-2 block w-full rounded-sm border border-[#A8B58A]/60 bg-[#F8F4EA] px-4 py-3 text-sm text-[#2D2923] shadow-none transition-colors placeholder:text-[#2D2923]/45 focus:border-[#35452C] focus:outline-none focus:ring-2 focus:ring-[#A8B58A]/25";
+const textareaClass = `${fieldClass} min-h-28 resize-y leading-7`;
 
 export default function RSVPForm() {
   const [formData, setFormData] = useState<RSVPData>({
@@ -32,6 +39,7 @@ export default function RSVPForm() {
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const shouldReduceMotion = useReducedMotion();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -66,16 +74,37 @@ export default function RSVPForm() {
 
   if (status === "success") {
     return (
-      <div className="text-center">
-        <p className="text-lg text-[#35452C]">Thank you — your RSVP has been received.</p>
-      </div>
+      <motion.div
+        className="mx-auto flex min-h-[28rem] max-w-xl flex-col items-center justify-center text-center"
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: shouldReduceMotion ? 0 : 0.7, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <motion.div
+          className="mb-7 h-px w-28 bg-[#A8B58A]"
+          initial={shouldReduceMotion ? false : { scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+          style={{ transformOrigin: "center" }}
+          aria-hidden="true"
+        />
+        <p className="font-serif text-4xl leading-tight text-[#35452C]">
+          J&amp;Z
+        </p>
+        <p className="mt-6 font-serif text-3xl leading-tight text-[#35452C]">
+          {rsvpContent.success.title}
+        </p>
+        <p className="mt-4 text-base leading-8 text-[#2D2923]/76">
+          {rsvpContent.success.body}
+        </p>
+      </motion.div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-[#2D2923]">
+        <label htmlFor="name" className={labelClass}>
           Name *
         </label>
         <input
@@ -85,12 +114,12 @@ export default function RSVPForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="mt-1 block w-full rounded-md border-[#A8B58A] bg-white px-3 py-2 shadow-sm focus:border-[#6F7A4B] focus:outline-none"
+          className={fieldClass}
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-[#2D2923]">
+        <label htmlFor="email" className={labelClass}>
           Email *
         </label>
         <input
@@ -100,13 +129,13 @@ export default function RSVPForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="mt-1 block w-full rounded-md border-[#A8B58A] bg-white px-3 py-2 shadow-sm focus:border-[#6F7A4B] focus:outline-none"
+          className={fieldClass}
         />
       </div>
 
       <div>
-        <label htmlFor="attending" className="block text-sm font-medium text-[#2D2923]">
-          Attending? *
+        <label htmlFor="attending" className={labelClass}>
+          Will you be attending? *
         </label>
         <select
           id="attending"
@@ -114,17 +143,17 @@ export default function RSVPForm() {
           value={formData.attending}
           onChange={handleChange}
           required
-          className="mt-1 block w-full rounded-md border-[#A8B58A] bg-white px-3 py-2 shadow-sm focus:border-[#6F7A4B] focus:outline-none"
+          className={fieldClass}
         >
-          <option value="">Select...</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
+          <option value="">Please choose</option>
+          <option value="yes">Joyfully attending</option>
+          <option value="no">Regretfully unable to attend</option>
         </select>
       </div>
 
       <div>
-        <label htmlFor="guestCount" className="block text-sm font-medium text-[#2D2923]">
-          Guest Count
+        <label htmlFor="guestCount" className={labelClass}>
+          Number of guests
         </label>
         <input
           type="number"
@@ -133,13 +162,13 @@ export default function RSVPForm() {
           value={formData.guestCount}
           onChange={handleChange}
           min="0"
-          className="mt-1 block w-full rounded-md border-[#A8B58A] bg-white px-3 py-2 shadow-sm focus:border-[#6F7A4B] focus:outline-none"
+          className={fieldClass}
         />
       </div>
 
       <div>
-        <label htmlFor="guestNames" className="block text-sm font-medium text-[#2D2923]">
-          Guest Names
+        <label htmlFor="guestNames" className={labelClass}>
+          Guest names
         </label>
         <textarea
           id="guestNames"
@@ -147,12 +176,12 @@ export default function RSVPForm() {
           value={formData.guestNames}
           onChange={handleChange}
           rows={3}
-          className="mt-1 block w-full rounded-md border-[#A8B58A] bg-white px-3 py-2 shadow-sm focus:border-[#6F7A4B] focus:outline-none"
+          className={textareaClass}
         />
       </div>
 
       <div>
-        <label htmlFor="dietaryRestrictions" className="block text-sm font-medium text-[#2D2923]">
+        <label htmlFor="dietaryRestrictions" className={labelClass}>
           Dietary Restrictions
         </label>
         <textarea
@@ -161,12 +190,12 @@ export default function RSVPForm() {
           value={formData.dietaryRestrictions}
           onChange={handleChange}
           rows={3}
-          className="mt-1 block w-full rounded-md border-[#A8B58A] bg-white px-3 py-2 shadow-sm focus:border-[#6F7A4B] focus:outline-none"
+          className={textareaClass}
         />
       </div>
 
       <div>
-        <label htmlFor="welcomeEvent" className="block text-sm font-medium text-[#2D2923]">
+        <label htmlFor="welcomeEvent" className={labelClass}>
           Welcome Event Attendance
         </label>
         <select
@@ -174,16 +203,16 @@ export default function RSVPForm() {
           name="welcomeEvent"
           value={formData.welcomeEvent}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-[#A8B58A] bg-white px-3 py-2 shadow-sm focus:border-[#6F7A4B] focus:outline-none"
+          className={fieldClass}
         >
-          <option value="">Select...</option>
+          <option value="">Please choose</option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </select>
       </div>
 
       <div>
-        <label htmlFor="sundayBrunch" className="block text-sm font-medium text-[#2D2923]">
+        <label htmlFor="sundayBrunch" className={labelClass}>
           Sunday Brunch Attendance
         </label>
         <select
@@ -191,16 +220,16 @@ export default function RSVPForm() {
           name="sundayBrunch"
           value={formData.sundayBrunch}
           onChange={handleChange}
-          className="mt-1 block w-full rounded-md border-[#A8B58A] bg-white px-3 py-2 shadow-sm focus:border-[#6F7A4B] focus:outline-none"
+          className={fieldClass}
         >
-          <option value="">Select...</option>
+          <option value="">Please choose</option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </select>
       </div>
 
       <div>
-        <label htmlFor="optionalStockholmEvents" className="block text-sm font-medium text-[#2D2923]">
+        <label htmlFor="optionalStockholmEvents" className={labelClass}>
           Optional Week-of Events/Interests
         </label>
         <textarea
@@ -209,12 +238,12 @@ export default function RSVPForm() {
           value={formData.optionalStockholmEvents}
           onChange={handleChange}
           rows={3}
-          className="mt-1 block w-full rounded-md border-[#A8B58A] bg-white px-3 py-2 shadow-sm focus:border-[#6F7A4B] focus:outline-none"
+          className={textareaClass}
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-[#2D2923]">
+        <label htmlFor="message" className={labelClass}>
           Message to the Couple
         </label>
         <textarea
@@ -223,7 +252,7 @@ export default function RSVPForm() {
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          className="mt-1 block w-full rounded-md border-[#A8B58A] bg-white px-3 py-2 shadow-sm focus:border-[#6F7A4B] focus:outline-none"
+          className={textareaClass}
         />
       </div>
 
@@ -239,13 +268,15 @@ export default function RSVPForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full rounded-md bg-[#6F7A4B] px-4 py-2 text-white hover:bg-[#35452C] focus:outline-none disabled:opacity-50"
+        className="w-full rounded-sm border border-[#35452C] bg-[#35452C] px-5 py-4 text-sm font-medium uppercase tracking-[0.18em] !text-[#F8F4EA] transition-colors hover:bg-[#2D2923] focus:outline-none focus:ring-2 focus:ring-[#A8B58A]/35 disabled:cursor-not-allowed disabled:opacity-50"
       >
-        {status === "submitting" ? "Submitting..." : "Submit RSVP"}
+        {status === "submitting" ? "Sending..." : "Send RSVP"}
       </button>
 
       {status === "error" && (
-        <p className="text-red-600">{errorMessage}</p>
+        <p className="rounded-sm border border-[#D8B8A6]/60 bg-[#F8F4EA]/70 p-3 text-sm leading-6 text-[#2D2923]">
+          {errorMessage}
+        </p>
       )}
     </form>
   );
