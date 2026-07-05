@@ -101,7 +101,18 @@ Keep answers under 4 sentences unless the guest asks for a list or step-by-step 
       temperature: 0.7,
     });
 
-    const answer = response.choices[0]?.message?.content?.trim() || chatContent.fallbackResponse;
+    const rawAnswer = response.choices[0]?.message?.content?.trim() || '';
+    const genericFallbackPatterns = [
+      /couldn['’]?t generate/i,
+      /don['’]?t know/i,
+      /do not know/i,
+      /not enough information/i,
+      /details are still being finalized/i,
+      /check back closer/i,
+    ];
+    const answer = genericFallbackPatterns.some((pattern) => pattern.test(rawAnswer))
+      ? chatContent.fallbackResponse
+      : rawAnswer || chatContent.fallbackResponse;
 
     return NextResponse.json({ ok: true, answer });
   } catch (error) {

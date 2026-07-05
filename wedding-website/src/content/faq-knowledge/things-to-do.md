@@ -1,7 +1,8 @@
 # Things to Do in Helsingborg
 
-Things to do in Helsingborg will include restaurants, bars, museums, nature, and local recommendations.
+Where else should I go if I want to make my trip longer? 
+We recommend Copenhagen, Norway, and Stockholm, though flights within European countries are often affordable and easy - so the possibilities are endless once you are here! 
 
-Optional pre-wedding Helsingborg activities may be added later.
+If you plan to explore Scandinavia before or after the wedding, CPH is a wonderful base — Copenhagen is a world-class city worth a few extra days. Julia and I also have an incredible trip itinerary from a previous trip in Norway that we are happy to share! :) 
 
-More details will be added as invitations are finalized.
+You are of course welcome to arrive sooner and explore CPH, Stockholm (see below, this is where Julia and I will be leading up to the wedding weekend), or another European city!

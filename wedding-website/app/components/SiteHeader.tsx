@@ -26,6 +26,7 @@ export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({});
   const isHome = pathname === "/";
+  const isGallery = pathname === "/gallery";
   const useLightButton = isHome || menuOpen;
 
   useEffect(() => {
@@ -71,6 +72,8 @@ export default function SiteHeader() {
   }, [menuOpen, pathname]);
 
   const closeMenu = () => setMenuOpen(false);
+
+  if (isGallery) return null;
 
   const buttonTone = useLightButton
     ? "border-[#F5F2EB]/30 text-[#F5F2EB] hover:border-[#F5F2EB]/60 hover:bg-[#F5F2EB]/10 focus-visible:ring-[#F5F2EB]/50"

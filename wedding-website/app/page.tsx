@@ -11,6 +11,7 @@ const editorialImages = {
   calm: "/home-page/home-page-4.jpg",
 };
 
+
 export default function Home() {
   return (
     <>

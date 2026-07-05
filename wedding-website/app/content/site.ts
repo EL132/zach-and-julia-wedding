@@ -67,24 +67,35 @@ export const navigationItems: NavItem[] = [
 ];
 
 export const chatContent = {
-  title: "Ask the wedding weekend assistant",
+  pageEyebrow: "JULIA & ZACH · MARYHILL ESTATE",
+  pageTitle: "Guest Questions",
+  pageIntro:
+    "Everything you may need to know before the weekend. Ask below, or browse a few common questions.",
+  title: "Guest Concierge",
   intro:
-    "Need a hand with travel notes, RSVP details, registry timing, or the flow of the weekend? Ask here and we’ll keep it short, warm, and useful.",
-  emptyEyebrow: "Hej from the guest desk",
-  emptyTitle: "Ask about arrivals, outfits, RSVPs, or where Swedish coffee fits into the plan.",
+    "Ask about travel, the weekend schedule, RSVP details, attire, or local recommendations.",
+  commonQuestionsTitle: "Common Questions",
+  commonQuestionsIntro: "A few starting points for the details guests ask about most.",
+  emptyEyebrow: "Guest desk",
+  emptyTitle: "Send a note and the concierge will look through the estate notes.",
   emptyBody:
-    "Julia & Zach are still filling in a few details, so some answers may arrive fashionably closer to August 2027.",
-  suggestedLabel: "A few good questions",
+    "Some details are still being refined, but this is the right place to ask.",
+  suggestedLabel: "Common questions",
   suggestedQuestions: [
-    "When should I plan to arrive in Helsingborg?",
-    "What will the weekend schedule include?",
-    "Where will travel details be posted?",
-    "How do I RSVP?",
+    "When should we plan to arrive?",
+    "Where should we stay?",
+    "How do we RSVP?",
+    "What should we wear?",
+    "What should we do nearby?",
   ],
   placeholder: "Ask about the wedding weekend...",
-  loadingMessage: "Checking the guest notes...",
+  loadingMessage: "Currently phoning Julia & Zach for the answers",
   fallbackResponse:
-    "I checked with Zlatan, the meatballs, and the frozen harbor breeze, but they’re all being mysterious. Check back soon or ask Julia & Zach directly.",
+    "I checked the estate notes, then sent Zach to investigate. He returned without an answer, but with a truly excellent piece of wood. Julia & Zach may need to weigh in on this one.",
+  fallbackImage: {
+    src: "/chat-photos/wood.jpg",
+    alt: "Zach holding a piece of wood",
+  },
   errorResponse:
     "The guest assistant lost its place for a moment. Please try again, or ask Julia & Zach directly.",
 };
