@@ -5,16 +5,12 @@ import type { GalleryChapter, GalleryChapterId, GalleryImage } from "./galleryTy
 const chapterCopy: Record<GalleryChapterId, Omit<GalleryChapter, "id" | "images">> = {
   proposal: {
     title: "Proposal",
-    eyebrow: "JULIA & ZACH",
-    supportingLine: "The beginning",
     body:
-      "A quiet moment, a question, and the beginning of everything that would lead us to Maryhill. These are a few favorite photos from the day forever became something we could start planning.",
+      "Our proposal took place at Glen Foerd Mansion in the neighborhood where Julia grew up. The surprise was complete, which is an incredible achievement by everyone involved in the day. The flower arrangement set up on the dock was so unexpected that it was briefly mistaken for someone else’s! The day was filled with so much joy and surprise that it felt like floating on clouds.",
     emptyMessage: "This chapter is coming soon.",
   },
   engagement: {
     title: "Engagement",
-    eyebrow: "JULIA & ZACH",
-    supportingLine: "The season before Maryhill",
     body:
       "A season of walks, celebrations, planning, and small moments before the wedding weekend. These are a few glimpses from the road to Maryhill.",
     emptyMessage: "This chapter is coming soon.",

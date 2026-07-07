@@ -9,8 +9,6 @@ export type GalleryImage = {
 export type GalleryChapter = {
   id: GalleryChapterId;
   title: string;
-  eyebrow: string;
-  supportingLine: string;
   body: string;
   emptyMessage: string;
   images: GalleryImage[];

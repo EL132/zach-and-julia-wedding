@@ -1,7 +1,10 @@
 # RSVP Information
 
-When do I RSVP? 
+When should we RSVP? 
 There’s no need to RSVP yet; that functionality will be live after the invitations are sent out. 
 
-Can I bring a plus-one? 
-We are so excited to celebrate with you; guest details will be provided with the invitations, which you can expect in the late summer / early fall of 2026. 
+Can we bring a plus-one? 
+Guest details will be provided with the invitations, which you can expect this winter. 
+
+Can children attend? 
+Since the wedding will take place internationally for many guests, we will be hosting an adults-only event aside from close relatives. We appreciate your understanding and cannot wait to celebrate with you!

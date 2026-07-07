@@ -3,7 +3,7 @@
 Travel Details 
 Getting Here
 
-We can't wait to celebrate with you in Sweden! Our wedding weekend will take place over three days, from Sunday to Monday, with specific schedule / event details to come. We know international travel takes some planning, so we've put together everything you need to know to get to Maryhill Estate in Glumslöv, Sweden with ease. 
+We can’t wait to celebrate with you in Sweden! Our wedding weekend will take place over three days, from early evening August 14 through early afternoon August 16, with specific schedule / event details to come. We know international travel takes some planning, so this guide includes everything guests need to know to get to Maryhill Estate in Glumslöv, Sweden with ease. 
 
 The Venue
 
@@ -14,11 +14,11 @@ Glumslöv is a smaller village on the coast of Skåne — Sweden's southernmost 
 
 Step 1: Getting to Sweden
 
-A Few Notes on International Travel: To prepare for the trip, please ensure that your passport is updated and does not expire before the wedding date. Given recent legislation, you will need to obtain a ETIAS (European Travel Information and Authorization System) waiver for travel to many European countries (including Sweden) beginning in 2027. It is easy to apply and should be valid for three years or until your passport expires. While it is anticipated to process within minutes, we strongly urge you to apply once it is available (expected to be the last quarter of 2026).
+A Few Notes on International Travel: To prepare for the trip, please ensure that your passport is updated and does not expire before the wedding date. Given recent legislation, you will need to obtain a ETIAS (European Travel Information and Authorization System) waiver for travel to many European countries (including Sweden) beginning in 2027. It is easy to apply and should be valid for three years or until your passport expires. While it is anticipated to process within minutes, we strongly urge guests to apply once it is available (expected to be the last quarter of 2026). Learn more at the official ETIAS site: https://travel-europe.europa.eu/etias
 
 Your Best Bet: Fly into Copenhagen (CPH)
 
-Despite being in Sweden, the easiest and most well-connected gateway to our venue is Copenhagen Airport (CPH) in Denmark. It's the largest hub in Scandinavia and sits just 50 km (about 45–55 minutes by car) from Glumslöv via the famous Øresund Bridge.
+Despite being in Sweden, the easiest and most well-connected gateway to the venue is Copenhagen Airport (CPH) in Denmark. It's the largest hub in Scandinavia and sits just 50 km (about 45–55 minutes by car) from Glumslöv via the famous Øresund Bridge.
 
 Direct flights from the East Coast to Copenhagen (CPH):
 
@@ -30,8 +30,8 @@ Atlanta (ATL): One connection through a European hub. Delta connects well throug
 Tips for booking flights:
 - Book as early as possible — August is high season in Scandinavia and fares fill up quickly.
 - SAS (Scandinavian Airlines), Delta, United, Lufthansa, and KLM all serve this route with reliable connections.
-- We recommend aiming to arrive no later than the morning of August 14, as festivities will begin in the early evening. You are of course welcome to arrive sooner and explore CPH, Stockholm (see below, this is where Julia and I will be leading up to the wedding weekend), or another European city!
-- If you plan to explore Scandinavia before or after the wedding, CPH is a wonderful base — Copenhagen is a world-class city worth a few extra days. Julia and I also have an incredible trip itinerary from a previous trip in Norway that we are happy to share! :) 
+- We recommend aiming to arrive no later than the morning of August 14, as festivities will begin in the early evening. You are of course welcome to arrive sooner and explore CPH, Stockholm (see below, this is where we will be leading up to the wedding weekend), or another European city!
+- If you plan to explore Scandinavia before or after the wedding, CPH is a wonderful base — Copenhagen is a world-class city worth a few extra days. We will be in Stockholm the week before the wedding as well, likely beginning August 10th, and will be sharing our itinerary for anyone who would like to join ahead of the wedding weekend. We also have an incredible trip itinerary from a previous trip in Norway that we are happy to share! :) 
 
 Alternative Airport: Malmö Airport (MMX)
 
@@ -39,7 +39,9 @@ Malmö Airport is located about 30 km from Glumslöv, but it primarily serves do
 
 Alternative Airport: Stockholm Arlanda (ARN)
 
-Stockholm Arlanda is Sweden's largest international airport, with direct transatlantic service, but it is approximately 600 km (5.5–6 hours by train) from Glumslöv. This is a good option if you intend to join Zach & Julia the week leading up to the wedding; we will be in Stockholm during that time. 
+Stockholm Arlanda is Sweden's largest international airport, with direct transatlantic service, but it is approximately 600 km (5.5–6 hours by train) from Glumslöv. This is a good option if you intend to join us the week leading up to the wedding; we will be in Stockholm during that time, likely beginning August 10th. 
+
+From Stockholm, guests can plan on roughly 5.5–6 hours by train toward southern Sweden. There may be an opportunity to coordinate with us on train travel since we will also be coming from Stockholm. Rental cars are also available from Stockholm for guests who prefer to drive south.
 
 Step 2: Getting from Copenhagen Airport to Glumslöv
 
@@ -76,7 +78,7 @@ Sweden and Denmark have excellent rail connections, making train travel a stress
 
 1. At CPH Airport: Take the Øresund regional train from the terminal's train station (directly beneath the airport — follow signs for "Trains to Sweden"). Trains run approximately every 20 minutes.
 2. To Malmö Central Station: ~18 minutes. Tickets can be purchased at the station or via the DSB/Skånetrafiken app.
-3. To Landskrona Station: From Malmö Central, take a regional Pågatåget train toward Helsingborg and exit at Landskrona (~25–30 minutes). Trains run frequently throughout the day. Occasionally, you can find a train that will take you directly to Landskrona and avoid the stop in Malmö
+3. To Landskrona Station: From Malmö Central, take a regional Pågatåget train north and exit at Landskrona (~25–30 minutes). Trains run frequently throughout the day. Occasionally, you can find a train that will take you directly to Landskrona and avoid the stop in Malmö
 4. Taxi to the venue which is approximately 3 km from Landskrona station. A short taxi ride (around 10 minutes) will bring you directly to the venue or your accommodation. Taxis are available outside the station or via apps such as Cabonline, Uber, Lyft, or Bolt. As with any taxi / rideshare service, price will fluctuate based on season and demand. 
 
 Booking train tickets: You can book in advance at (https://www.sj.se) or (https://www.skanetrafiken.se). The Øresund crossing portion is operated by DSB/SJ and is very affordable (typically 80–120 SEK / ~$9–13 USD for the full Malmö–CPH leg).
@@ -107,4 +109,4 @@ Phone service: Most major US carriers offer international plans that include Swe
 
 Questions?
 
-Please visit our FAQ page to ask any questions. If you have any unanswered questions about getting here or need help planning your travel, please don't hesitate to reach out to us. We want this trip to be as easy and enjoyable as possible, and we're so grateful you're making the journey to celebrate with us!
+Please visit the FAQ page to ask any questions. If you have any unanswered questions about getting here or need help planning your travel, please don't hesitate to reach out to us. We want this trip to be as easy and enjoyable as possible, and we’re so grateful you're making the journey to celebrate with us!

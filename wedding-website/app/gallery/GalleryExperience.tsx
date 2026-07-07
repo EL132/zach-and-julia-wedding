@@ -281,15 +281,14 @@ function ChapterSelectPanel({
 
       <div className={`relative z-10 flex h-screen items-end px-10 pb-14 ${image ? "" : "text-[#35452C]"}`}>
         <div className="max-w-md">
-          <p className={`text-xs uppercase tracking-[0.34em] ${image ? "text-[#F8F4EA]/78" : "text-[#6F7A4B]"}`}>
-            {chapter.eyebrow}
-          </p>
-          <h2 className={`mt-5 font-serif text-6xl leading-none sm:text-7xl ${image ? "text-[#F8F4EA]" : "text-[#35452C]"}`}>
+          <h2 className={`font-serif text-6xl leading-none sm:text-7xl ${image ? "text-[#F8F4EA]" : "text-[#35452C]"}`}>
             {chapter.title}
           </h2>
-          <p className={`mt-4 text-sm leading-7 ${image ? "text-[#F8F4EA]/82" : "text-[#2D2923]/76"}`}>
-            {hasImages ? chapter.supportingLine : chapter.emptyMessage}
-          </p>
+          {!hasImages ? (
+            <p className={`mt-4 text-sm leading-7 ${image ? "text-[#F8F4EA]/82" : "text-[#2D2923]/76"}`}>
+              {chapter.emptyMessage}
+            </p>
+          ) : null}
           <p
             className={`mt-8 text-xs uppercase tracking-[0.24em] text-[#F8F4EA] transition-opacity duration-700 ${
               hasImages && isPreviewed ? "opacity-100" : "opacity-0"
@@ -328,15 +327,14 @@ function MobileChapterCard({ chapter, onOpen }: MobileChapterCardProps) {
       />
       <div className={`relative z-10 flex min-h-[50vh] items-end px-6 pb-8 ${image ? "text-[#F8F4EA]" : "text-[#35452C]"}`}>
         <div>
-          <p className={`text-xs uppercase tracking-[0.3em] ${image ? "text-[#F8F4EA]/78" : "text-[#6F7A4B]"}`}>
-            {chapter.eyebrow}
-          </p>
-          <h2 className={`mt-4 font-serif text-5xl leading-none ${image ? "text-[#F8F4EA]" : "text-[#35452C]"}`}>
+          <h2 className={`font-serif text-5xl leading-none ${image ? "text-[#F8F4EA]" : "text-[#35452C]"}`}>
             {chapter.title}
           </h2>
-          <p className={`mt-4 text-sm leading-7 ${image ? "text-[#F8F4EA]/82" : "text-[#2D2923]/76"}`}>
-            {hasImages ? chapter.supportingLine : chapter.emptyMessage}
-          </p>
+          {!hasImages ? (
+            <p className={`mt-4 text-sm leading-7 ${image ? "text-[#F8F4EA]/82" : "text-[#2D2923]/76"}`}>
+              {chapter.emptyMessage}
+            </p>
+          ) : null}
           {hasImages ? (
             <p className="mt-7 text-xs uppercase tracking-[0.24em] text-[#F8F4EA]">Enter the story</p>
           ) : null}
@@ -419,8 +417,7 @@ function StoryViewer({
             Back to gallery
           </button>
 
-          <p className="mt-12 text-xs uppercase tracking-[0.3em] text-[#6F7A4B]">Julia & Zach</p>
-          <h1 className="mt-5 font-serif text-5xl leading-none text-[#35452C] sm:text-6xl">{chapter.title}</h1>
+          <h1 className="mt-12 font-serif text-5xl leading-none text-[#35452C] sm:text-6xl">{chapter.title}</h1>
           <p className="mt-7 text-base leading-8 text-[#2D2923]/82">{chapter.body}</p>
 
           <div className="mt-10 border-t border-[#A8B58A]/45 pt-6">

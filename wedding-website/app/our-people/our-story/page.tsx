@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { InteriorIntro, InteriorPageShell } from "@/app/components/InteriorPage";
 import { ourStoryContent } from "@/app/content/site";
@@ -8,9 +9,31 @@ export const metadata: Metadata = {
   description: "The story behind Julia & Zach's wedding weekend.",
 };
 
-function PhotoPlaceholder() {
+type TimelineImage = {
+  src: string;
+  alt: string;
+} | null;
+
+function TimelinePhoto({ image, title }: { image: TimelineImage; title: string }) {
+  if (image) {
+    return (
+      <div className="relative h-56 w-full max-w-[18rem] overflow-hidden rounded-md border border-[#A8B58A]/45 bg-[#F8F4EA] sm:h-64">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          sizes="(min-width: 768px) 18rem, 100vw"
+          className="object-cover"
+        />
+      </div>
+    );
+  }
+
   return (
-    <div className="aspect-square w-full max-w-[18rem] rounded-md border border-[#A8B58A]/45 bg-[#F8F4EA] p-5">
+    <div
+      aria-label={`${title} photo coming soon`}
+      className="aspect-[3/2] w-full max-w-[18rem] rounded-md border border-[#A8B58A]/45 bg-[#F8F4EA] p-5"
+    >
       <div className="flex h-full flex-col items-center justify-center border border-dashed border-[#A8B58A]/45 text-center">
         <p className="font-serif text-2xl leading-tight text-[#35452C]">
           Photo coming soon
@@ -62,13 +85,10 @@ export default function OurStoryPage() {
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {ourStoryContent.debrief.cards.map((card) => (
             <article
-              key={card.label}
+              key={card.title}
               className="rounded-md border border-[#A8B58A]/45 bg-[#EFE7D8] p-7 sm:p-8"
             >
-              <p className="text-xs uppercase tracking-[0.24em] text-[#6F7A4B]">
-                {card.label}
-              </p>
-              <h3 className="mt-5 font-serif text-3xl leading-tight text-[#35452C]">
+              <h3 className="font-serif text-3xl leading-tight text-[#35452C]">
                 {card.title}
               </h3>
               <p className="mt-5 text-base leading-8 text-[#2D2923]/82">
@@ -110,8 +130,8 @@ export default function OurStoryPage() {
                 : "md:col-start-3 md:row-start-1 md:pl-10";
             const imageClass =
               index % 2 === 0
-                ? "md:col-start-3 md:row-start-1 md:justify-self-start"
-                : "md:col-start-1 md:row-start-1 md:justify-self-end";
+                ? "flex w-full justify-center md:col-start-3 md:row-start-1"
+                : "flex w-full justify-center md:col-start-1 md:row-start-1";
 
             return (
               <article
@@ -138,7 +158,7 @@ export default function OurStoryPage() {
                 </div>
 
                 <div className={imageClass}>
-                  <PhotoPlaceholder />
+                  <TimelinePhoto image={entry.image} title={entry.title} />
                 </div>
               </article>
             );

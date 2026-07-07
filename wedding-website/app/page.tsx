@@ -7,8 +7,7 @@ const editorialImages = {
   hero: "/home-page/cover-photo.jpg",
   wide: "/home-page/home-page-3.jpg",
   tall: "/home-page/home-page-2.jpg",
-  offset: "/home-page/home-page-1.jpg",
-  calm: "/home-page/home-page-4.jpg",
+  calm: "/home-page/home-page-1.jpg",
 };
 
 
@@ -35,7 +34,7 @@ export default function Home() {
           <p className="mt-5 text-sm tracking-[0.18em] text-[#E4E1D8]/80 sm:text-base">
             {homePageContent.hero.subtitle}
           </p>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[#F1EFE8]/86 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl whitespace-pre-line text-base leading-7 text-[#F1EFE8]/86 sm:text-lg">
             {homePageContent.hero.supportingCopy}
           </p>
         </div>
@@ -73,25 +72,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mt-12 grid gap-8 lg:grid-cols-[0.6fr_0.4fr] lg:items-end">
-          <RevealImage
-            src={editorialImages.offset}
-            alt="Editorial photograph of the couple in a garden setting"
-            width={1400}
-            height={950}
-            reveal="up"
-          />
-
-          <div className="max-w-md">
-            <p className="text-xs uppercase tracking-[0.38em] text-[#6E6A61]">
-              {homePageContent.galleryNote.eyebrow}
-            </p>
-            <p className="mt-5 text-xl font-serif leading-10 text-[#2D2923]">
-              {homePageContent.galleryNote.body}
-            </p>
-          </div>
-        </section>
-
         <section className="mt-12 overflow-hidden">
           <RevealImage
             src={editorialImages.calm}
@@ -113,22 +93,22 @@ export default function Home() {
           </h2>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="/rsvp"
-              className="inline-flex rounded-full border border-[#F5F2EB]/25 bg-[#F5F2EB]/5 px-8 py-3 text-sm uppercase tracking-[0.35em] text-[#F5F2EB] transition hover:bg-[#F5F2EB]/10"
-            >
-              RSVP
-            </Link>
-            <Link
-              href="/schedule/weekend"
-              className="inline-flex rounded-full border border-[#F5F2EB]/25 bg-[#F5F2EB]/5 px-8 py-3 text-sm uppercase tracking-[0.35em] text-[#F5F2EB] transition hover:bg-[#F5F2EB]/10"
-            >
-              Weekend details
-            </Link>
-            <Link
               href="/travel"
               className="inline-flex rounded-full border border-[#F5F2EB]/25 bg-[#F5F2EB]/5 px-8 py-3 text-sm uppercase tracking-[0.35em] text-[#F5F2EB] transition hover:bg-[#F5F2EB]/10"
             >
               Travel
+            </Link>
+            <Link
+              href="/our-people/our-story"
+              className="inline-flex rounded-full border border-[#F5F2EB]/25 bg-[#F5F2EB]/5 px-8 py-3 text-sm uppercase tracking-[0.35em] text-[#F5F2EB] transition hover:bg-[#F5F2EB]/10"
+            >
+              Our Story
+            </Link>
+            <Link
+              href="/faqs"
+              className="inline-flex rounded-full border border-[#F5F2EB]/25 bg-[#F5F2EB]/5 px-8 py-3 text-sm uppercase tracking-[0.35em] text-[#F5F2EB] transition hover:bg-[#F5F2EB]/10"
+            >
+              FAQs
             </Link>
           </div>
         </div>

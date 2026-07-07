@@ -5,26 +5,21 @@ export const couple = {
 
 export const homePageContent = {
   hero: {
-    eyebrow: "A weekend in Helsingborg",
+    eyebrow: "A weekend in Glumslöv",
     title: couple.displayName,
-    subtitle: "August 2027 · Helsingborg, Sweden",
+    subtitle: "August 2027 · Glumslöv, Skåne, Sweden",
     supportingCopy:
-      "We can’t wait to celebrate with you. Explore the weekend details, travel notes, photos, and RSVP when you’re ready.",
+      "We can’t wait to celebrate with you!\nExplore the venue details, travel recommendations, and our story. We’ll be sharing formal invitations in the winter.",
   },
   story: {
     eyebrow: "The story begins",
-    title: "Quiet moments, stone terraces, and a soft hush before the celebration.",
+    title: "Celebrate with us on the coast of Sweden",
     body:
-      "Our weekend is gathered around the people we love most, with room for slow mornings, candlelit dinners, and the joy of being together.",
-  },
-  galleryNote: {
-    eyebrow: "A refined story",
-    body:
-      "Each photograph is a chapter in a quiet day: the light between leaves, the stillness of stone, the cadence of footsteps toward the house.",
+      "Thank you for being a part of our incredible village; come eat, dance, laugh, and celebrate by the sea!",
   },
   cta: {
     eyebrow: "The weekend awaits",
-    title: "Join us in Helsingborg",
+    title: "Join us in Glumslöv",
   },
 };
 
@@ -43,26 +38,11 @@ export type NavItem = {
 
 export const navigationItems: NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/registry", label: "Registry" },
-  {
-    label: "Schedule",
-    activeHrefs: ["/schedule", "/events"],
-    children: [
-      { href: "/schedule/week-of", label: "Week of" },
-      { href: "/schedule/weekend", label: "Weekend" },
-    ],
-  },
   { href: "/travel", label: "Travel" },
-  {
-    label: "Our People",
-    activeHrefs: ["/our-people", "/wedding-party"],
-    children: [
-      { href: "/our-people/our-story", label: "Our Story" },
-      { href: "/our-people/wedding-party", label: "Wedding Party" },
-    ],
-  },
-  { href: "/rsvp", label: "RSVP", emphasized: true },
+  { href: "/our-people/our-story", label: "Our Story", activeHrefs: ["/our-people/our-story"] },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/schedule", label: "Schedule", activeHrefs: ["/schedule", "/events"] },
+  { href: "/registry", label: "Registry" },
   { href: "/faqs", label: "FAQs" },
 ];
 
@@ -70,11 +50,11 @@ export const rsvpContent = {
   eyebrow: "JULIA & ZACH · MARYHILL ESTATE",
   title: "Kindly Reply",
   intro:
-    "We would be honored to celebrate with you. Please let us know your plans for the weekend.",
+    "We would be honored to celebrate with you. Please share your plans for the weekend.",
   card: {
     label: "RSVP",
     venue: "Maryhill Estate",
-    location: "Helsingborg, Sweden",
+    location: "Glumslöv, Skåne, Sweden",
     date: "August 2027",
     responseLabel: "Kindly respond by",
     responseDate: "Date coming soon",
@@ -94,8 +74,9 @@ export const ourStoryContent = {
     label: "THE BEGINNING",
     paragraphs: [
       "Almost six years to the day after we started dating, we’ll be getting married at Maryhill Estate.",
-      "We met on Tinder — still unclear why they haven’t sponsored us — and somehow, after one first date, both left convinced something real had happened.",
-      "That was the beginning of our forever: laughing together across Atlanta, Philly, Manhattan, Stockholm, and Boston. We love you and can’t wait to celebrate with you all.",
+      "We met on Tinder — still unclear why Tinder hasn’t sponsored us — and somehow, after one first date, both left convinced we had met our match.",
+      "That was the beginning of our forever: laughing together across Atlanta, Philadelphia, Manhattan, Stockholm, and Boston.",
+      "We love you and can’t wait to celebrate with you all!",
     ],
   },
   debrief: {
@@ -103,69 +84,94 @@ export const ourStoryContent = {
     intro: "Two versions. Same conclusion.",
     cards: [
       {
-        label: "EXHIBIT I",
-        title: "Julia’s Debrief",
+        title: "The College Apartment Debrief",
         body:
-          "After Zach dropped me off at my college apartment — shoutout 3934 — I blasted Miley Cyrus, ran into Liv’s room, and declared that I had met the love of my life.",
-        note: "Liv promptly told me to go to bed.",
+          "After our first date ended at Julia’s college apartment — shoutout 3934 — Miley Cyrus was blasting, Liv heard the news, and the conclusion was clear: we had met our match.",
+        note: "Liv promptly suggested bedtime.",
       },
       {
-        label: "EXHIBIT II",
-        title: "Zach’s Debrief",
+        title: "The Drive Home Debrief",
         body:
-          "On the drive back to Malvern, Zach called his cousin Ainsley and declared he had found ‘a genuine connection.’",
-        note: "They had been watching a lot of Love Island that summer.",
+          "On the drive back to Malvern, Ainsley got the call: we had found ‘a genuine connection.’",
+        note: "Too Hot to Handle had been in heavy rotation that summer.",
       },
     ],
   },
-  routeLine: "ATLANTA → PHILLY → MANHATTAN → STOCKHOLM → BOSTON → MARYHILL",
+  routeLine: "ATLANTA → PHILADELPHIA → MANHATTAN → STOCKHOLM → BOSTON → MARYHILL",
   timelineTitle: "Six Years to Maryhill",
   timeline: [
     {
       year: "2021",
       title: "Junior Year Formal",
-      text: "An early chapter, before forever had a name.",
+      text: "Our first few weeks together",
+      image: {
+        src: "/our-story/junior-year.jpeg",
+        alt: "Us at junior year formal",
+      },
     },
     {
       year: "2022",
       title: "Senior Year Formal",
-      text: "An early chapter, already full of certainty.",
+      text: "A year full of graduations and milestones",
+      image: {
+        src: "/our-story/senior-year.jpeg",
+        alt: "Us at senior year formal",
+      },
     },
     {
       year: "2023",
-      title: "Maine",
-      text: "The kind of trip that becomes part of the story without trying.",
+      title: "Summer in New England",
+      text: "Molasses Pond in Maine, one of our favorite spots in our beloved New England",
+      image: {
+        src: "/our-story/maine.jpeg",
+        alt: "Us at Molasses Pond in Maine",
+      },
     },
     {
       year: "2024",
-      title: "Sweden & Norway",
+      title: "Summer in Sweden & Norway",
       text:
-        "A summer that made Scandinavia feel less like a destination and more like part of us.",
+        "A summer that made Scandinavia feel less like a destination and more like part of us and inspired us to share it with you",
+      image: {
+        src: "/our-story/scandanavia.jpeg",
+        alt: "Us in Scandinavia",
+      },
     },
     {
       year: "2025",
       title: "Engagement",
-      text: "The question that turned the next chapter into a plan.",
+      text: "She said YES",
+      image: {
+        src: "/our-story/proposal.jpeg",
+        alt: "Us on the day we got engaged",
+      },
     },
     {
       year: "2026",
       title: "Finding Maryhill",
       text:
-        "Back in Sweden, this time looking for the place where we’d bring everyone together.",
+        "Ah the splendor of wedding planning (yes, Zach is alive and well)",
+      image: {
+        src: "/our-story/sweden.jpeg",
+        alt: "Us in Sweden while finding Maryhill",
+      },
     },
     {
       year: "2027",
       title: "Maryhill Estate",
-      text: "The weekend we get to celebrate it all with you.",
+      text: "A country estate by the sea where we will celebrate the past six years and toast to the rest of our lives together with all the people we love the most",
+      image: {
+        src: "/our-story/marhill.jpg",
+        alt: "Maryhill Estate by the sea",
+      },
     },
   ],
   closing: {
     title:
-      "And that was the beginning of our forever — laughing together across Atlanta, Philly, Manhattan, Stockholm, and Boston.",
-    body: "We love you and can’t wait to celebrate with you.",
+      "And that was the beginning of our forever — laughing together across Atlanta, Philadelphia, Manhattan, Stockholm, and Boston.",
+    body: "We love you and can’t wait to celebrate with you!",
     links: [
       { href: "/gallery", label: "View the Gallery →" },
-      { href: "/rsvp", label: "RSVP →" },
     ],
   },
 };
@@ -187,14 +193,14 @@ export const travelContent = {
       heading: "Fly into Copenhagen Airport",
       label: "Recommended",
       body: "Best for guests coming directly to the celebration.",
-      routeHint: "CPH → Helsingborg → Maryhill",
+      routeHint: "CPH → Glumslöv → Maryhill",
     },
     {
       title: "If you are spending the week in Stockholm",
       heading: "Arrive through Stockholm",
       body:
         "Best for guests joining earlier plans before traveling south for the wedding weekend.",
-      routeHint: "Stockholm → Helsingborg → Maryhill",
+      routeHint: "Stockholm → Glumslöv → Maryhill",
     },
   ],
   timeline: [
@@ -204,9 +210,9 @@ export const travelContent = {
         "The recommended arrival airport and the easiest gateway for most guests.",
     },
     {
-      label: "Helsingborg",
+      label: "Glumslöv, Skåne",
       description:
-        "Cross the Øresund Bridge into Skåne, then continue north toward the coast.",
+        "Cross the Øresund Bridge into Skåne, then continue north toward Glumslöv.",
     },
     {
       label: "Maryhill Estate",
@@ -231,14 +237,15 @@ export const travelContent = {
       body:
         "Stockholm Arlanda is Sweden's largest international airport, but it is about 600 km from Glumslöv. This route mainly makes sense if you are spending the week leading up to the wedding in Stockholm before traveling south.",
       notes: [
-        "Plan on roughly 5.5–6 hours by train from Stockholm toward southern Sweden.",
+        "Plan on roughly 5.5–6 hours by train from Stockholm toward southern Sweden. There may be an opportunity to coordinate with us on train travel since we will also be coming from Stockholm.",
+        "Rental cars are also available from Stockholm for guests who prefer to drive south.",
         "If you are traveling directly to the wedding weekend, Copenhagen will usually be simpler.",
       ],
     },
     {
-      title: "From Helsingborg",
+      title: "Near the venue",
       body:
-        "Maryhill Estate is in Glumslöv, near the Helsingborg and Landskrona area. Local taxi or rideshare details will be shared closer to the weekend.",
+        "Maryhill Estate is in Glumslöv, near Landskrona on the Skåne coast. Local taxi or rideshare details will be shared closer to the weekend.",
       notes: ["Details coming soon."],
     },
     {
@@ -267,7 +274,12 @@ export const travelContent = {
         "English is spoken very widely throughout Sweden, especially in Skåne.",
         "Sweden uses Type F plugs and 230V/50Hz current. US travelers should bring a plug adapter.",
         "Most major US carriers offer international plans that include Sweden. Check with your provider before traveling.",
-        "Travelers should make sure passports are current. ETIAS travel authorization is expected for many European destinations, including Sweden, beginning in 2027.",
+        {
+          text: "Travelers should make sure passports are current. ETIAS travel authorization is expected for many European destinations, including Sweden, beginning in 2027. Learn more at the ",
+          href: "https://travel-europe.europa.eu/etias",
+          linkLabel: "official ETIAS site",
+          suffix: ".",
+        },
       ],
     },
   ],
@@ -280,7 +292,7 @@ export const travelContent = {
   },
   fieldResearch: {
     mainLine:
-      "Zach has been dispatched to finalize the logistics. Early reports suggest sparks are flying.",
+      "We’re finalizing the logistics. Early reports suggest sparks are flying.",
     caption: "Field research, apparently.",
     image: {
       src: "/chat-photos/working-on-it.JPG",
@@ -307,18 +319,18 @@ export const chatContent = {
   suggestedQuestions: [
     "When should we plan to arrive?",
     "Where should we stay?",
-    "How do we RSVP?",
+    "How should we RSVP?",
     "What should we wear?",
     "What should we do nearby?",
   ],
   placeholder: "Ask about the wedding weekend...",
   loadingMessage: "Currently phoning Julia & Zach for the answers",
   fallbackResponse:
-    "I checked the estate notes, then sent Zach to investigate. He returned without an answer, but with a truly excellent piece of wood. Julia & Zach may need to weigh in on this one.",
+    "We checked the estate notes and are still tracking this one down. We may need to weigh in on this one.",
   fallbackImage: {
     src: "/chat-photos/wood.jpg",
     alt: "Zach holding a piece of wood",
   },
   errorResponse:
-    "The guest assistant lost its place for a moment. Please try again, or ask Julia & Zach directly.",
+    "The guest assistant lost its place for a moment. Please try again, or ask us directly.",
 };

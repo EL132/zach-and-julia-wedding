@@ -1,14 +1,5 @@
-import PageHeader from "@/app/components/PageHeader";
+import { redirect } from "next/navigation";
 
 export default function WeekendPage() {
-  return (
-    <main className="mx-auto w-full max-w-6xl px-6 py-16 sm:px-8">
-      <PageHeader title="Weekend" subtitle="A relaxed overview of the wedding weekend schedule." />
-      <section className="mt-12 rounded-lg border border-[#E6D8C6] bg-[#EFE7D8] p-8">
-        <p className="max-w-2xl text-base leading-8 text-[#2D2923]/85">
-          Ceremony, reception, welcome gathering, and farewell details will be shared here once the schedule is ready.
-        </p>
-      </section>
-    </main>
-  );
+  redirect("/schedule");
 }

@@ -388,7 +388,7 @@ Examples:
 
 * “A weekend in the gardens of Maryhill Estate.”
 * “Join us at Maryhill Estate.”
-* “Celebrate with us in Helsingborg.”
+* “Celebrate with us in Glumslöv.”
 * “Weekend Details”
 * “Travel”
 * “RSVP”

@@ -1,6 +1,6 @@
 # Wedding Overview
 
-We can't wait to celebrate with you in Sweden! Our wedding weekend will take place over three days, from Sunday to Monday, with specific schedule / event details to come. We know international travel takes some planning, so we've put together everything you need to know to get to Maryhill Estate in Glumslöv, Sweden with ease. 
+We can’t wait to celebrate with you in Sweden! Our wedding weekend will take place over three days, from early evening August 14 through early afternoon August 16, with specific schedule / event details to come. We know international travel takes some planning, so this guide includes everything guests need to know to get to Maryhill Estate in Glumslöv, Sweden with ease. 
 
 The Venue
 

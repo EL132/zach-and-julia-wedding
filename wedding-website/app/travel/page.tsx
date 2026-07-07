@@ -9,6 +9,38 @@ export const metadata: Metadata = {
   description: "Travel guidance for Julia & Zach's wedding weekend at Maryhill Estate.",
 };
 
+type TravelNote =
+  | string
+  | {
+      text: string;
+      href: string;
+      linkLabel: string;
+      suffix?: string;
+    };
+
+function getNoteKey(note: TravelNote) {
+  return typeof note === "string" ? note : `${note.text}-${note.href}`;
+}
+
+function TravelNoteText({ note }: { note: TravelNote }) {
+  if (typeof note === "string") return <>{note}</>;
+
+  return (
+    <>
+      {note.text}
+      <a
+        href={note.href}
+        target="_blank"
+        rel="noreferrer"
+        className="font-medium text-[#35452C] underline decoration-[#A8B58A] underline-offset-4 transition-colors hover:text-[#1A1712]"
+      >
+        {note.linkLabel}
+      </a>
+      {note.suffix}
+    </>
+  );
+}
+
 export default function TravelPage() {
   return (
     <InteriorPageShell>
@@ -121,14 +153,16 @@ export default function TravelPage() {
                 <ul className="mt-5 space-y-3 border-t border-[#A8B58A]/35 pt-5">
                   {section.notes.map((note) => (
                     <li
-                      key={note}
+                      key={getNoteKey(note)}
                       className="flex gap-3 text-sm leading-7 text-[#2D2923]/78"
                     >
                       <span
                         className="mt-3 h-1.5 w-1.5 flex-none rounded-full bg-[#6F7A4B]"
                         aria-hidden="true"
                       />
-                      <span>{note}</span>
+                      <span>
+                        <TravelNoteText note={note} />
+                      </span>
                     </li>
                   ))}
                 </ul>
