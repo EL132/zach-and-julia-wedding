@@ -3,14 +3,14 @@ import { Cardo, Inter } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "./components/SiteHeader";
 
-const cardo = Cardo({
+const primaryFont = Cardo({
   variable: "--font-cardo",
   subsets: ["latin"],
   weight: ["400", "700"],
   display: "swap",
 });
 
-const inter = Inter({
+const secondaryFont = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
@@ -27,7 +27,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cardo.variable} ${inter.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${primaryFont.variable} ${secondaryFont.variable} h-full antialiased`}
+    >
       <body className="min-h-full bg-[#F8F4EA] text-[#2D2923]">
         <SiteHeader />
         {children}

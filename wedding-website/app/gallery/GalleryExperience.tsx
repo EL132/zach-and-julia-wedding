@@ -400,6 +400,11 @@ function StoryViewer({
         imageIndex={imageIndex}
         prefersReducedMotion={prefersReducedMotion}
         useSharedTransition={useSharedTransition}
+        isFirst={isFirst}
+        isLast={isLast}
+        totalImages={chapter.images.length}
+        onNext={onNext}
+        onPrevious={onPrevious}
       />
 
       <motion.aside
@@ -422,7 +427,7 @@ function StoryViewer({
 
           <div className="mt-10 border-t border-[#A8B58A]/45 pt-6">
             <p className="font-serif text-3xl text-[#35452C]">{formatCount(imageIndex, chapter.images.length)}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 hidden flex-wrap gap-3 lg:flex">
               <button
                 type="button"
                 onClick={onPrevious}
@@ -453,9 +458,25 @@ type StoryPhotoProps = {
   imageIndex: number;
   prefersReducedMotion: boolean;
   useSharedTransition: boolean;
+  isFirst: boolean;
+  isLast: boolean;
+  totalImages: number;
+  onNext: () => void;
+  onPrevious: () => void;
 };
 
-function StoryPhoto({ chapterId, image, imageIndex, prefersReducedMotion, useSharedTransition }: StoryPhotoProps) {
+function StoryPhoto({
+  chapterId,
+  image,
+  imageIndex,
+  prefersReducedMotion,
+  useSharedTransition,
+  isFirst,
+  isLast,
+  totalImages,
+  onNext,
+  onPrevious,
+}: StoryPhotoProps) {
   const [displayedImage, setDisplayedImage] = useState(image);
   const [incomingImage, setIncomingImage] = useState<GalleryImage | null>(null);
   const [incomingLoaded, setIncomingLoaded] = useState(false);
@@ -518,6 +539,32 @@ function StoryPhoto({ chapterId, image, imageIndex, prefersReducedMotion, useSha
       ) : null}
 
       <div className="absolute inset-0 bg-gradient-to-t from-[#1A1712]/16 to-transparent" aria-hidden="true" />
+
+      <div className="absolute inset-x-4 bottom-5 z-20 flex items-center justify-between lg:hidden">
+        <button
+          type="button"
+          onClick={onPrevious}
+          disabled={isFirst}
+          aria-label="View previous photo"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-[#F8F4EA]/55 bg-[#1A1712]/42 text-xl text-[#F8F4EA] shadow-sm backdrop-blur-sm transition-colors hover:bg-[#1A1712]/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F8F4EA]/70 disabled:cursor-not-allowed disabled:opacity-35"
+        >
+          <span aria-hidden="true">←</span>
+        </button>
+
+        <p className="rounded-full border border-[#F8F4EA]/40 bg-[#1A1712]/42 px-4 py-2 text-xs tracking-[0.2em] text-[#F8F4EA] backdrop-blur-sm">
+          {formatCount(imageIndex, totalImages)}
+        </p>
+
+        <button
+          type="button"
+          onClick={onNext}
+          disabled={isLast}
+          aria-label="View next photo"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-[#F8F4EA]/55 bg-[#1A1712]/42 text-xl text-[#F8F4EA] shadow-sm backdrop-blur-sm transition-colors hover:bg-[#1A1712]/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F8F4EA]/70 disabled:cursor-not-allowed disabled:opacity-35"
+        >
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
     </motion.div>
   );
 }
