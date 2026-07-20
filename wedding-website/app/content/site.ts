@@ -7,7 +7,7 @@ export const homePageContent = {
   hero: {
     eyebrow: "A weekend in Glumslöv",
     title: couple.displayName,
-    subtitle: "August 2027 · Glumslöv, Skåne, Sweden",
+    subtitle: "August 14-16, 2027 · Glumslöv, Skåne, Sweden",
     supportingCopy:
       "We can’t wait to celebrate with you!\nExplore the venue details, travel recommendations, and our story. We’ll be sharing formal invitations in the winter.",
   },
@@ -86,8 +86,8 @@ export const ourStoryContent = {
       {
         title: "The College Apartment Debrief",
         body:
-          "After our first date ended at Julia’s college apartment — shoutout 3934 — Miley Cyrus was blasting, Liv heard the news, and the conclusion was clear: we had met our match.",
-        note: "Liv promptly suggested bedtime.",
+          "After our first date, I burst into Liv’s room at my old college apartment (shoutout 3934), danced around blasting ‘See You Again’ by Miley Cyrus, and declared that I had met the love of my life.",
+        note: "Liv promptly told me to go to sleep :)",
       },
       {
         title: "The Drive Home Debrief",
@@ -181,6 +181,27 @@ export const travelContent = {
   title: "Travel",
   intro:
     "The easiest route to the wedding weekend is through Copenhagen Airport, unless you are spending the week beforehand in Stockholm.",
+  requirementsModal: {
+    eyebrow: "Before you travel",
+    title: "Passport and ETIAS requirements",
+    intro:
+      "If you are traveling on a U.S. or other visa-exempt passport, please plan ahead for both items before our August 2027 wedding.",
+    passport: {
+      title: "Check your passport now",
+      body:
+        "Your passport should be no more than 10 years old and valid for at least three months after the date you plan to leave the ETIAS countries. Renew early if needed.",
+      href: "https://travel.state.gov/en/international-travel/travel-advisories/sweden.html",
+      linkLabel: "Review Sweden’s passport guidance",
+    },
+    etias: {
+      title: "Plan to apply for ETIAS",
+      body:
+        "ETIAS is expected to begin before the wedding. Applications are not open yet; once the official launch date is announced, visa-exempt travelers should apply using the official ETIAS site.",
+      href: "https://travel-europe.europa.eu/en/etias/about-etias/what-is-etias",
+      linkLabel: "Visit the official ETIAS site",
+    },
+    footnote: "We’ll update this page when ETIAS applications open.",
+  },
   startHere: {
     title: "Start Here",
     heading: "For most guests, Copenhagen Airport is the easiest arrival point.",
@@ -243,12 +264,6 @@ export const travelContent = {
       ],
     },
     {
-      title: "Near the venue",
-      body:
-        "Maryhill Estate is in Glumslöv, near Landskrona on the Skåne coast. Local taxi or rideshare details will be shared closer to the weekend.",
-      notes: ["Details coming soon."],
-    },
-    {
       title: "Getting around locally",
       body:
         "Taxi, rideshare, train, bus, and rental car options are all available depending on your arrival time, luggage, and how much flexibility you want.",
@@ -261,7 +276,7 @@ export const travelContent = {
     {
       title: "Where to stay",
       body:
-        "Glumslöv is a small village, so we recommend staying at the venue. We will pre-book all the rooms needed for the two nights of August 14 and 15 and will communicate booking instructions as it gets closer; there is no need to book your room at this time. Please don’t book directly through Maryhill, as we have negotiated discounted rates for our guests. However, if you would like to stay at Maryhill beyond the nights of August 14 and August 15, please coordinate directly with the hotel for those additional nights.",
+        "Glumslöv is a small village, so we recommend staying at the venue. We will pre-book all the rooms needed for the two nights of August 14 and 15 and will communicate booking instructions as it gets closer; there is no need to book your room at this time. Please don’t book directly through Maryhill, as we have negotiated discounted rates for our guests. For those who would like to arrive at Maryhill early or stay later, we are also currently coordinating with Maryhill to block the surrounding Friday and Monday nights and will communicate booking instructions once finalized.",
       notes: ["Do not book rooms directly through Maryhill for August 14 and 15."],
     },
     {
@@ -275,8 +290,8 @@ export const travelContent = {
         "Sweden uses Type F plugs and 230V/50Hz current. US travelers should bring a plug adapter.",
         "Most major US carriers offer international plans that include Sweden. Check with your provider before traveling.",
         {
-          text: "Travelers should make sure passports are current. ETIAS travel authorization is expected for many European destinations, including Sweden, beginning in 2027. Learn more at the ",
-          href: "https://travel-europe.europa.eu/etias",
+          text: "Travelers should check now that their passports will be valid for at least three months after leaving the ETIAS countries. ETIAS is expected to begin before the wedding, but applications are not open yet. Follow updates on the ",
+          href: "https://travel-europe.europa.eu/en/etias/about-etias/what-is-etias",
           linkLabel: "official ETIAS site",
           suffix: ".",
         },

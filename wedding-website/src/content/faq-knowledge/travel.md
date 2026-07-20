@@ -14,7 +14,7 @@ Glumslöv is a smaller village on the coast of Skåne — Sweden's southernmost 
 
 Step 1: Getting to Sweden
 
-A Few Notes on International Travel: To prepare for the trip, please ensure that your passport is updated and does not expire before the wedding date. Given recent legislation, you will need to obtain a ETIAS (European Travel Information and Authorization System) waiver for travel to many European countries (including Sweden) beginning in 2027. It is easy to apply and should be valid for three years or until your passport expires. While it is anticipated to process within minutes, we strongly urge guests to apply once it is available (expected to be the last quarter of 2026). Learn more at the official ETIAS site: https://travel-europe.europa.eu/etias
+A Few Notes on International Travel: Please check now that your passport is no more than 10 years old and will remain valid for at least three months after you plan to leave the ETIAS countries. ETIAS (European Travel Information and Authorisation System) is expected to begin before the August 2027 wedding, but applications are not open yet and the official launch date has not been announced. Once applications open, visa-exempt travelers should apply using the official ETIAS site. ETIAS authorizations are expected to remain valid for up to three years or until the linked passport expires, whichever comes first. Learn more at the official ETIAS site: https://travel-europe.europa.eu/en/etias/about-etias/what-is-etias
 
 Your Best Bet: Fly into Copenhagen (CPH)
 
@@ -93,7 +93,7 @@ After arriving at Lund, call an Uber/Lyft directly to the venue. It is a 40 minu
 
 Where to Stay
 
-Glumslöv is a small village, so we recommend staying at the venue. We will pre-book all the rooms needed for the two nights of August 14 and 15 and will communicate booking instructions as it gets closer; there is no need to book your room at this time. Please don’t book directly through Maryhill, as we have negotiated discounted rates for our guests. However, if you would like to stay at Maryhill beyond the nights of August 14 and August 15, please coordinate directly with the hotel for those additional nights.
+Glumslöv is a small village, so we recommend staying at the venue. We will pre-book all the rooms needed for the two nights of August 14 and 15 and will communicate booking instructions as it gets closer; there is no need to book your room at this time. Please don’t book directly through Maryhill, as we have negotiated discounted rates for our guests. For those who would like to arrive at Maryhill early or stay later, we are also currently coordinating with Maryhill to block the surrounding Friday and Monday nights and will communicate booking instructions once finalized.
 
 A Few Things to Know About Sweden in August
 

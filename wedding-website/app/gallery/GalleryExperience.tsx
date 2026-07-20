@@ -38,6 +38,14 @@ function formatCount(currentIndex: number, total: number) {
   return `${current} / ${count}`;
 }
 
+function formatPhotoTotal(total: number) {
+  return `${String(total).padStart(2, "0")} ${total === 1 ? "photograph" : "photographs"}`;
+}
+
+function clampImageIndex(index: number, total: number) {
+  return total > 0 ? Math.min(Math.max(index, 0), total - 1) : 0;
+}
+
 function getCoverImage(chapter: GalleryChapter): GalleryImage | null {
   return chapter.images.find((image) => image.index === 1) ?? chapter.images[0] ?? null;
 }
@@ -65,6 +73,7 @@ export default function GalleryExperience({ chapters }: GalleryExperienceProps) 
     () => chapters.find((chapter) => chapter.id === activeChapterId) ?? null,
     [activeChapterId, chapters],
   );
+  const activeImageCount = activeChapter?.images.length ?? 0;
 
   const previewChapterId = focusedChapterId ?? activeChapterId;
   const dividerPosition =
@@ -88,13 +97,16 @@ export default function GalleryExperience({ chapters }: GalleryExperienceProps) 
   }, []);
 
   const goToPrevious = useCallback(() => {
-    setActiveImageIndex((current) => Math.max(current - 1, 0));
-  }, []);
+    setActiveImageIndex((current) =>
+      clampImageIndex(clampImageIndex(current, activeImageCount) - 1, activeImageCount),
+    );
+  }, [activeImageCount]);
 
   const goToNext = useCallback(() => {
-    if (!activeChapter) return;
-    setActiveImageIndex((current) => Math.min(current + 1, activeChapter.images.length - 1));
-  }, [activeChapter]);
+    setActiveImageIndex((current) =>
+      clampImageIndex(clampImageIndex(current, activeImageCount) + 1, activeImageCount),
+    );
+  }, [activeImageCount]);
 
   useEffect(() => {
     if (phase !== "viewer") return;
@@ -288,7 +300,11 @@ function ChapterSelectPanel({
             <p className={`mt-4 text-sm leading-7 ${image ? "text-[#F8F4EA]/82" : "text-[#2D2923]/76"}`}>
               {chapter.emptyMessage}
             </p>
-          ) : null}
+          ) : (
+            <p className="mt-4 text-xs uppercase tracking-[0.22em] text-[#F8F4EA]/72">
+              {formatPhotoTotal(chapter.images.length)}
+            </p>
+          )}
           <p
             className={`mt-8 text-xs uppercase tracking-[0.24em] text-[#F8F4EA] transition-opacity duration-700 ${
               hasImages && isPreviewed ? "opacity-100" : "opacity-0"
@@ -334,7 +350,11 @@ function MobileChapterCard({ chapter, onOpen }: MobileChapterCardProps) {
             <p className={`mt-4 text-sm leading-7 ${image ? "text-[#F8F4EA]/82" : "text-[#2D2923]/76"}`}>
               {chapter.emptyMessage}
             </p>
-          ) : null}
+          ) : (
+            <p className="mt-4 text-xs uppercase tracking-[0.22em] text-[#F8F4EA]/72">
+              {formatPhotoTotal(chapter.images.length)}
+            </p>
+          )}
           {hasImages ? (
             <p className="mt-7 text-xs uppercase tracking-[0.24em] text-[#F8F4EA]">Enter the story</p>
           ) : null}
@@ -363,9 +383,10 @@ function StoryViewer({
   onNext,
   onPrevious,
 }: StoryViewerProps) {
-  const image = chapter.images[imageIndex];
-  const isFirst = imageIndex === 0;
-  const isLast = imageIndex === chapter.images.length - 1;
+  const safeImageIndex = clampImageIndex(imageIndex, chapter.images.length);
+  const image = chapter.images[safeImageIndex];
+  const isFirst = safeImageIndex === 0;
+  const isLast = safeImageIndex === chapter.images.length - 1;
 
   if (!image) {
     return (
@@ -397,7 +418,7 @@ function StoryViewer({
       <StoryPhoto
         chapterId={chapter.id}
         image={image}
-        imageIndex={imageIndex}
+        imageIndex={safeImageIndex}
         prefersReducedMotion={prefersReducedMotion}
         useSharedTransition={useSharedTransition}
         isFirst={isFirst}
@@ -426,7 +447,7 @@ function StoryViewer({
           <p className="mt-7 text-base leading-8 text-[#2D2923]/82">{chapter.body}</p>
 
           <div className="mt-10 border-t border-[#A8B58A]/45 pt-6">
-            <p className="font-serif text-3xl text-[#35452C]">{formatCount(imageIndex, chapter.images.length)}</p>
+            <p className="font-serif text-3xl text-[#35452C]">{formatCount(safeImageIndex, chapter.images.length)}</p>
             <div className="mt-6 hidden flex-wrap gap-3 lg:flex">
               <button
                 type="button"

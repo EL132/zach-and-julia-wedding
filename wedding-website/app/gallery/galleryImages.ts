@@ -6,7 +6,7 @@ const chapterCopy: Record<GalleryChapterId, Omit<GalleryChapter, "id" | "images"
   proposal: {
     title: "Proposal",
     body:
-      "Our proposal took place at Glen Foerd Mansion in the neighborhood where Julia grew up. The surprise was complete, which is an incredible achievement by everyone involved in the day. The flower arrangement set up on the dock was so unexpected that it was briefly mistaken for someone else’s! The day was filled with so much joy and surprise that it felt like floating on clouds.",
+      "Zach proposed to me at Glen Foerd Mansion right across from my childhood home. I was totally surprised, which is an incredible achievement by Zach and all the family and friends involved in the day. I was actually so surprised that I told Zach that the flower arrangement that my brother, Alex, and his girlfriend, Lauren, had secretly set up on the dock was for someone else and of course we couldn’t go see it! The day Zach proposed was filled with such joy that I felt like I was floating on clouds!",
     emptyMessage: "This chapter is coming soon.",
   },
   engagement: {

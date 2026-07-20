@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { InteriorIntro, InteriorPageShell } from "@/app/components/InteriorPage";
 import { travelContent } from "@/app/content/site";
+import TravelRequirementsModal from "./TravelRequirementsModal";
 
 export const metadata: Metadata = {
   title: "Travel | Julia & Zach",
@@ -44,6 +45,8 @@ function TravelNoteText({ note }: { note: TravelNote }) {
 export default function TravelPage() {
   return (
     <InteriorPageShell>
+      <TravelRequirementsModal content={travelContent.requirementsModal} />
+
       <InteriorIntro eyebrow={travelContent.eyebrow} title={travelContent.title}>
         {travelContent.intro}
       </InteriorIntro>
