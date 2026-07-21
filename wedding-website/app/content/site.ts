@@ -74,7 +74,7 @@ export const ourStoryContent = {
     label: "THE BEGINNING",
     paragraphs: [
       "Almost six years to the day after we started dating, we’ll be getting married at Maryhill Estate.",
-      "We met on Tinder — still unclear why Tinder hasn’t sponsored us — and somehow, after one first date, both left convinced we had met our match.",
+      "We met on Tinder — still unclear why Tinder hasn’t sponsored us — and somehow, after our first date, both left convinced we had met our match.",
       "That was the beginning of our forever: laughing together across Atlanta, Philadelphia, Manhattan, Stockholm, and Boston.",
       "We love you and can’t wait to celebrate with you all!",
     ],
@@ -92,7 +92,7 @@ export const ourStoryContent = {
       {
         title: "The Drive Home Debrief",
         body:
-          "On the drive back to Malvern, Ainsley got the call: we had found ‘a genuine connection.’",
+          "I had been staying with my cousin Ainsley the summer Julia and I met. We spent more time than I want to admit watching Too Hot To Handle together on Netflix. Driving home from my first date with Julia in Ainsley’s car, I remember calling her and saying in a horrible Essex accent that I had ‘found a genuine connection.’",
         note: "Too Hot to Handle had been in heavy rotation that summer.",
       },
     ],

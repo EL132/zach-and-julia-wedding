@@ -131,6 +131,47 @@ export default function TravelPage() {
       </section>
 
       <section className="mt-14">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.28em] text-[#6F7A4B]">
+              Venue Map
+            </p>
+            <h2 className="mt-4 font-serif text-4xl leading-tight text-[#35452C]">
+              Explore Maryhill Estate
+            </h2>
+            <p className="mt-4 text-base leading-8 text-[#2D2923]/80">
+              An illustrated guide to Hill House, the Sugar Club, guest rooms, pools, and estate amenities.
+            </p>
+          </div>
+          <a
+            href="/home-page/mary-hill-estate-drawing.png"
+            target="_blank"
+            rel="noreferrer"
+            className="w-fit text-sm font-medium text-[#35452C] underline decoration-[#A8B58A] underline-offset-4 transition-colors hover:text-[#1A1712]"
+          >
+            Open full-size map
+          </a>
+        </div>
+
+        <a
+          href="/home-page/mary-hill-estate-drawing.png"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open the illustrated Maryhill Estate map at full size"
+          className="mt-7 block overflow-hidden rounded-md border border-[#A8B58A]/45 bg-[#EFE7D8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6F7A4B]/35"
+        >
+          <Image
+            src="/home-page/mary-hill-estate-drawing.png"
+            alt="Illustrated map of Maryhill Estate showing Hill House, the Sugar Club, guest rooms, pools, and amenities"
+            width={4096}
+            height={2560}
+            sizes="(min-width: 1280px) 72rem, calc(100vw - 3rem)"
+            className="h-auto w-full"
+          />
+        </a>
+      </section>
+
+      <section className="mt-14">
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.28em] text-[#6F7A4B]">
             Travel Details

@@ -38,10 +38,6 @@ function formatCount(currentIndex: number, total: number) {
   return `${current} / ${count}`;
 }
 
-function formatPhotoTotal(total: number) {
-  return `${String(total).padStart(2, "0")} ${total === 1 ? "photograph" : "photographs"}`;
-}
-
 function clampImageIndex(index: number, total: number) {
   return total > 0 ? Math.min(Math.max(index, 0), total - 1) : 0;
 }
@@ -300,11 +296,7 @@ function ChapterSelectPanel({
             <p className={`mt-4 text-sm leading-7 ${image ? "text-[#F8F4EA]/82" : "text-[#2D2923]/76"}`}>
               {chapter.emptyMessage}
             </p>
-          ) : (
-            <p className="mt-4 text-xs uppercase tracking-[0.22em] text-[#F8F4EA]/72">
-              {formatPhotoTotal(chapter.images.length)}
-            </p>
-          )}
+          ) : null}
           <p
             className={`mt-8 text-xs uppercase tracking-[0.24em] text-[#F8F4EA] transition-opacity duration-700 ${
               hasImages && isPreviewed ? "opacity-100" : "opacity-0"
@@ -350,11 +342,7 @@ function MobileChapterCard({ chapter, onOpen }: MobileChapterCardProps) {
             <p className={`mt-4 text-sm leading-7 ${image ? "text-[#F8F4EA]/82" : "text-[#2D2923]/76"}`}>
               {chapter.emptyMessage}
             </p>
-          ) : (
-            <p className="mt-4 text-xs uppercase tracking-[0.22em] text-[#F8F4EA]/72">
-              {formatPhotoTotal(chapter.images.length)}
-            </p>
-          )}
+          ) : null}
           {hasImages ? (
             <p className="mt-7 text-xs uppercase tracking-[0.24em] text-[#F8F4EA]">Enter the story</p>
           ) : null}
