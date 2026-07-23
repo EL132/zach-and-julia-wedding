@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { couple, navigationItems, type NavItem } from "@/app/content/site";
+import { FishMark } from "@/app/components/FishMark";
 
 const menuEase = [0.22, 1, 0.36, 1] as const;
 
@@ -137,7 +138,9 @@ export default function SiteHeader() {
             >
               <p className="text-xs uppercase tracking-[0.55em] text-[#F5F2EB]/60">Navigation</p>
 
-              <nav className="mt-8 space-y-[clamp(0.65rem,1.8vh,1.25rem)]" aria-label="Primary navigation">
+              <FishMark className="mt-4 h-8 w-8 opacity-75" />
+
+              <nav className="mt-6 space-y-[clamp(0.65rem,1.8vh,1.25rem)]" aria-label="Primary navigation">
                 {navigationItems.map((item, index) => {
                   const itemIsActive = isNavItemActive(item, pathname);
                   const groupOpen = openGroups[item.label] ?? itemIsActive;
