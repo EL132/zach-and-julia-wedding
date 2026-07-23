@@ -138,7 +138,7 @@ export default function SiteHeader() {
             >
               <p className="text-xs uppercase tracking-[0.55em] text-[#F5F2EB]/60">Navigation</p>
 
-              <FishMark className="mt-4 h-8 w-8 opacity-75" />
+              <FishMark className="mt-4 h-14 w-14 opacity-75" />
 
               <nav className="mt-6 space-y-[clamp(0.65rem,1.8vh,1.25rem)]" aria-label="Primary navigation">
                 {navigationItems.map((item, index) => {

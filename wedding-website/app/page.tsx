@@ -86,7 +86,6 @@ export default function Home() {
 
       <footer className="bg-[#0a0a08] px-6 py-12 sm:px-8 sm:py-16">
         <div className="mx-auto max-w-3xl text-center">
-          <FishMark className="mx-auto mb-8 h-10 w-10 opacity-80" />
           <p className="text-xs uppercase tracking-[0.4em] text-[#E6E2D6]/70">
             {homePageContent.cta.eyebrow}
           </p>
@@ -113,7 +112,7 @@ export default function Home() {
               FAQs
             </Link>
           </div>
-          <FishMark className="mx-auto mt-10 h-10 w-10 opacity-80" />
+          <FishMark className="mx-auto mt-10 h-20 w-20 opacity-80" />
         </div>
       </footer>
     </>
