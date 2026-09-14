@@ -1,6 +1,6 @@
 # Maryhill Estate experience
 
-Open the site's navigation, choose **Rendering**, then click **explore**. The entrance contains only that word. After the model loads, a gentle camera move reveals the estate and settles into an overview. The experience fills the viewport; drag to orbit, wheel or pinch to zoom, or use the visible zoom and reset controls. Escape or back returns to the entrance. Arrow keys orbit, +/− zoom and R resets when the scene has focus.
+Open the site's navigation, choose **Explore Maryhill**, then click **explore**. The entrance has the centered invitation and the usual top-left hamburger menu for returning to other pages. After the model loads, a gentle camera move reveals the estate and settles into an overview. The experience fills the viewport; drag to orbit, wheel or pinch to zoom, or use the visible zoom and reset controls. Escape or back returns to the entrance and its navigation menu. Arrow keys orbit, +/− zoom and R resets when the scene has focus.
 
 Choose a discovery dot or an entry in **discover** to move closer to the terrace, furnished glasshouse, tennis court, **Julia & Zach** in the cupola, or the sauna. **View estate** returns to the overview. Dragging or zooming interrupts an active camera move.
 

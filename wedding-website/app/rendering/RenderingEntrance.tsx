@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useCallback, useEffect, useRef, useState } from "react";
+import SiteHeader from "@/app/components/SiteHeader";
 import styles from "./rendering.module.css";
 
 // The WebGL bundle and estate asset are requested only after the invitation is accepted.
@@ -44,15 +45,18 @@ export default function RenderingEntrance() {
           <EstateExperience onClose={closeExperience} />
         </section>
       ) : (
-        <button
-          ref={exploreButton}
-          type="button"
-          className={styles.explore}
-          onClick={() => setExploring(true)}
-          aria-label="Explore Maryhill Estate in 3D"
-        >
-          explore
-        </button>
+        <>
+          <SiteHeader showOnRendering />
+          <button
+            ref={exploreButton}
+            type="button"
+            className={styles.explore}
+            onClick={() => setExploring(true)}
+            aria-label="Explore Maryhill Estate in 3D"
+          >
+            explore
+          </button>
+        </>
       )}
     </main>
   );

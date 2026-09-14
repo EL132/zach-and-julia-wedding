@@ -20,7 +20,7 @@ function isNavItemActive(item: NavItem, pathname: string) {
   return item.activeHrefs?.some((href) => isHrefActive(href, pathname)) ?? false;
 }
 
-export default function SiteHeader() {
+export default function SiteHeader({ showOnRendering = false }: { showOnRendering?: boolean }) {
   const pathname = usePathname();
   const menuId = useId();
   const shouldReduceMotion = useReducedMotion();
@@ -74,7 +74,7 @@ export default function SiteHeader() {
 
   const closeMenu = () => setMenuOpen(false);
 
-  if (isGallery || pathname === "/rendering") return null;
+  if (isGallery || (pathname === "/rendering" && !showOnRendering)) return null;
 
   const buttonTone = useLightButton
     ? "border-[#F5F2EB]/30 text-[#F5F2EB] hover:border-[#F5F2EB]/60 hover:bg-[#F5F2EB]/10 focus-visible:ring-[#F5F2EB]/50"
