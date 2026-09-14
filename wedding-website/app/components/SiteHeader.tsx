@@ -74,7 +74,7 @@ export default function SiteHeader() {
 
   const closeMenu = () => setMenuOpen(false);
 
-  if (isGallery) return null;
+  if (isGallery || pathname === "/rendering") return null;
 
   const buttonTone = useLightButton
     ? "border-[#F5F2EB]/30 text-[#F5F2EB] hover:border-[#F5F2EB]/60 hover:bg-[#F5F2EB]/10 focus-visible:ring-[#F5F2EB]/50"

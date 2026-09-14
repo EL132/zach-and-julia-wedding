@@ -4,10 +4,6 @@ import fs from 'fs';
 import path from 'path';
 import { chatContent, couple } from '@/app/content/site';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPEN_AI_API_KEY,
-});
-
 const KNOWLEDGE_DIR = path.join(process.cwd(), 'src', 'content', 'faq-knowledge');
 
 interface Chunk {
@@ -82,6 +78,16 @@ export async function POST(request: NextRequest) {
     if (relevantChunks.length === 0) {
       return NextResponse.json({ ok: true, answer: chatContent.fallbackResponse });
     }
+
+    // Only the chat request needs credentials; importing this route during a build does not.
+    const apiKey = process.env.OPENAI_API_KEY?.trim() || process.env.OPEN_AI_API_KEY?.trim();
+    if (!apiKey) {
+      return NextResponse.json(
+        { ok: false, error: 'The guest assistant is unavailable. Please use the FAQs or contact us directly.' },
+        { status: 503 },
+      );
+    }
+    const openai = new OpenAI({ apiKey });
 
     const context = relevantChunks.join('\n\n');
 

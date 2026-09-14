@@ -41,6 +41,7 @@ export const navigationItems: NavItem[] = [
   { href: "/travel", label: "Travel" },
   { href: "/our-people/our-story", label: "Our Story", activeHrefs: ["/our-people/our-story"] },
   { href: "/gallery", label: "Gallery" },
+  { href: "/rendering", label: "Rendering" },
   { href: "/schedule", label: "Schedule", activeHrefs: ["/schedule", "/events"] },
   { href: "/registry", label: "Registry" },
   { href: "/faqs", label: "FAQs" },

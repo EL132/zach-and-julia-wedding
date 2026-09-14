@@ -2,7 +2,19 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+To build and run the production site locally:
+
+```bash
+npm install
+npm run build
+npm run start
+```
+
+After a successful build, `npm run start` can be used on its own. Rebuild after changing the source. The interactive estate is at `/rendering`.
+
+The website builds and starts without an OpenAI key. Only the FAQ guest assistant needs one: set `OPENAI_API_KEY` in your local `.env.local` to enable it. The existing `OPEN_AI_API_KEY` name is also supported. Without a key, chat requests return an unavailable response instead of preventing the website from building. Never commit your key.
+
+For automatic updates while editing, use the development server instead:
 
 ```bash
 npm run dev
