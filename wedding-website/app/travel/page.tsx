@@ -160,9 +160,30 @@ export default function TravelPage() {
               <h3 className="font-serif text-3xl leading-tight text-[#35452C]">
                 {section.title}
               </h3>
-              <p className="mt-4 text-base leading-8 text-[#2D2923]/80">
-                {section.body}
-              </p>
+              {section.bodyBlocks ? (
+                <div className="mt-4 space-y-4 text-base leading-8 text-[#2D2923]/80">
+                  {section.bodyBlocks.map((block, index) =>
+                    block.type === "paragraph" ? (
+                      <p key={`${block.type}-${index}`}>{block.text}</p>
+                    ) : (
+                      <p key={`${block.type}-${index}`}>
+                        <a
+                          href={block.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex rounded-sm border border-[#35452C]/45 px-5 py-3 font-medium text-[#35452C] underline decoration-[#A8B58A] underline-offset-4 transition-colors hover:border-[#35452C] hover:bg-[#F8F4EA]/70 hover:text-[#1A1712] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6F7A4B]/35"
+                        >
+                          {block.label}
+                        </a>
+                      </p>
+                    ),
+                  )}
+                </div>
+              ) : (
+                <p className="mt-4 text-base leading-8 text-[#2D2923]/80">
+                  {section.body}
+                </p>
+              )}
               {section.notes.length ? (
                 <ul className="mt-5 space-y-3 border-t border-[#A8B58A]/35 pt-5">
                   {section.notes.map((note) => (
