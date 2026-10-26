@@ -28,6 +28,7 @@ export default function SiteHeader({ showOnRendering = false }: { showOnRenderin
   const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({});
   const isHome = pathname === "/";
   const isGallery = pathname === "/gallery";
+  const isSchedule = pathname === "/schedule";
   const useLightButton = isHome || menuOpen;
 
   useEffect(() => {
@@ -76,9 +77,11 @@ export default function SiteHeader({ showOnRendering = false }: { showOnRenderin
 
   if (isGallery || (pathname === "/rendering" && !showOnRendering)) return null;
 
-  const buttonTone = useLightButton
-    ? "border-[#F5F2EB]/30 text-[#F5F2EB] hover:border-[#F5F2EB]/60 hover:bg-[#F5F2EB]/10 focus-visible:ring-[#F5F2EB]/50"
-    : "border-[#2D2923]/25 text-[#1A1712] hover:border-[#2D2923]/50 hover:bg-[#2D2923]/5 focus-visible:ring-[#2D2923]/30";
+  const buttonTone = isSchedule && !menuOpen
+    ? "border-[#F5F2EB]/35 bg-[#35452C] text-[#F5F2EB] hover:border-[#F5F2EB]/60 hover:bg-[#425a35] focus-visible:ring-[#35452C]/50"
+    : useLightButton
+      ? "border-[#F5F2EB]/30 bg-transparent text-[#F5F2EB] hover:border-[#F5F2EB]/60 hover:bg-[#F5F2EB]/10 focus-visible:ring-[#F5F2EB]/50"
+      : "border-[#2D2923]/25 bg-transparent text-[#1A1712] hover:border-[#2D2923]/50 hover:bg-[#2D2923]/5 focus-visible:ring-[#2D2923]/30";
 
   return (
     <>
@@ -90,7 +93,8 @@ export default function SiteHeader({ showOnRendering = false }: { showOnRenderin
             aria-controls={menuId}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
-            className={`group relative flex h-12 w-12 items-center justify-center rounded-full border bg-transparent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${buttonTone}`}
+            style={isSchedule ? { color: "#F5F2EB" } : undefined}
+            className={`group relative flex h-12 w-12 items-center justify-center rounded-full border transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${buttonTone}`}
           >
             <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
             <span aria-hidden="true" className="relative h-4 w-7">

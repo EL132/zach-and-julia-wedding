@@ -3,7 +3,7 @@
 Travel Details 
 Getting Here
 
-We can’t wait to celebrate with you in Sweden! Our wedding weekend will take place over three days, from early evening August 14 through early afternoon August 16, with specific schedule / event details to come. We know international travel takes some planning, so this guide includes everything guests need to know to get to Maryhill Estate in Glumslöv, Sweden with ease. 
+We can’t wait to celebrate with you in Sweden! Our wedding weekend at Maryhill Estate runs August 14–16, 2027: tennis, sauna and cold plunge, and a welcome dinner on August 14; the wedding on August 15; and breakfast / brunch on August 16. Exact times will follow. We know international travel takes some planning, so this guide includes everything guests need to know to get to Maryhill Estate in Glumslöv, Sweden with ease.
 
 The Venue
 
@@ -30,8 +30,8 @@ Atlanta (ATL): One connection through a European hub. Delta connects well throug
 Tips for booking flights:
 - Book as early as possible — August is high season in Scandinavia and fares fill up quickly.
 - SAS (Scandinavian Airlines), Delta, United, Lufthansa, and KLM all serve this route with reliable connections.
-- We recommend aiming to arrive no later than the morning of August 14, as festivities will begin in the early evening. You are of course welcome to arrive sooner and explore CPH, Stockholm (see below, this is where we will be leading up to the wedding weekend), or another European city!
-- If you plan to explore Scandinavia before or after the wedding, CPH is a wonderful base — Copenhagen is a world-class city worth a few extra days. We will be in Stockholm the week before the wedding as well, likely beginning August 10th, and will be sharing our itinerary for anyone who would like to join ahead of the wedding weekend. We also have an incredible trip itinerary from a previous trip in Norway that we are happy to share! :) 
+- If you want to join all August 14 activities, plan to arrive before that day. Exact event times will follow. You are of course welcome to arrive sooner and explore CPH, Stockholm (see below, this is where we will be leading up to the wedding weekend), or another European city!
+- If you plan to explore Scandinavia before or after the wedding, CPH is a wonderful base — Copenhagen is a world-class city worth a few extra days. We will be in Stockholm August 8–12, 2027, before traveling to Maryhill, and will be sharing our itinerary for anyone who would like to join ahead of the wedding weekend. We also have an incredible trip itinerary from a previous trip in Norway that we are happy to share! :)
 
 Alternative Airport: Malmö Airport (MMX)
 
@@ -39,7 +39,7 @@ Malmö Airport is located about 30 km from Glumslöv, but it primarily serves do
 
 Alternative Airport: Stockholm Arlanda (ARN)
 
-Stockholm Arlanda is Sweden's largest international airport, with direct transatlantic service, but it is approximately 600 km (5.5–6 hours by train) from Glumslöv. This is a good option if you intend to join us the week leading up to the wedding; we will be in Stockholm during that time, likely beginning August 10th. 
+Stockholm Arlanda is Sweden's largest international airport, with direct transatlantic service, but it is approximately 600 km (5.5–6 hours by train) from Glumslöv. This is a good option if you intend to join us before the wedding weekend; we will be in Stockholm August 8–12, 2027.
 
 From Stockholm, guests can plan on roughly 5.5–6 hours by train toward southern Sweden. There may be an opportunity to coordinate with us on train travel since we will also be coming from Stockholm. Rental cars are also available from Stockholm for guests who prefer to drive south.
 
