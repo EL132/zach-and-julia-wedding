@@ -337,7 +337,7 @@ export default function WeddingPartyCarousel() {
   const [alternatePortraits, setAlternatePortraits] = useState<Record<string, boolean>>({});
   const pointerStart = useRef<PointerStart | null>(null);
   const lastPhotoTap = useRef<{ personId: string; time: number; count: number } | null>(null);
-  const alternatePortraitTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
+  const alternatePortraitTimers = useRef<Record<string, number>>({});
   const direction = useRef(1);
 
   useLayoutEffect(() => {
