@@ -31,18 +31,8 @@ type PointerStart = {
 
 const groomsmen: PartyPerson[] = [
   {
-    id: "luke",
-    number: "01",
-    name: "Luke",
-    image: "/wedding-party/groomsman-img-8344.jpeg",
-    alt: "Luke in a blue striped shirt against a green background",
-    alternateImage: "/wedding-party/luke-alt.jpg",
-    alternateAlt: "Luke in a casual close-up selfie",
-    distinction: "Best Man",
-  },
-  {
     id: "elias-lind",
-    number: "02",
+    number: "01",
     name: "Elias Lind",
     image: "/wedding-party/elias-lind-new.jpg",
     alt: "Elias Lind outdoors in a white polo shirt",
@@ -52,29 +42,47 @@ const groomsmen: PartyPerson[] = [
     distinction: "Best Man",
   },
   {
-    id: "linus",
+    id: "luke",
+    number: "02",
+    name: "Luke",
+    image: "/wedding-party/groomsman-img-8344.jpeg",
+    alt: "Luke in a blue striped shirt against a green background",
+    alternateImage: "/wedding-party/luke-alt.jpg",
+    alternateAlt: "Luke in a casual close-up selfie",
+    distinction: "Best Man",
+  },
+  {
+    id: "ben",
     number: "03",
+    name: "Ben",
+    image: "/wedding-party/ben.jpg",
+    alt: "Ben smiling in a suit",
+    distinction: "Best Man",
+  },
+  {
+    id: "linus",
+    number: "04",
     name: "Linus",
     image: "/wedding-party/groomsman-linus.jpeg",
     alt: "Linus with his baby on the beach",
   },
   {
     id: "alex",
-    number: "04",
+    number: "05",
     name: "Alex",
     image: "/wedding-party/groomsman-left-portrait.jpeg",
     alt: "Alex in a light suit by the water",
   },
   {
     id: "skylar",
-    number: "05",
+    number: "06",
     name: "Skylar",
     image: "/wedding-party/groomsman-image.jpg",
     alt: "Skylar holding a cocktail at a party",
   },
   {
     id: "drew",
-    number: "06",
+    number: "07",
     name: "Drew",
     image: "/wedding-party/drew.jpg",
     alt: "Drew taking a mirror selfie while holding his baby",
@@ -84,29 +92,22 @@ const groomsmen: PartyPerson[] = [
   },
   {
     id: "grant",
-    number: "07",
+    number: "08",
     name: "Grant",
     image: "/wedding-party/grant.jpg",
     alt: "Grant in a black tuxedo and bow tie",
   },
   {
     id: "fred",
-    number: "08",
+    number: "09",
     name: "Fred",
     image: "/wedding-party/fred.jpg",
     alt: "Fred taking a selfie in a convertible",
   },
   {
-    id: "ben",
-    number: "09",
-    name: "Ben",
-    image: "/wedding-party/ben.jpg",
-    alt: "Ben smiling in a suit",
-  },
-  {
     id: "groomsman-10",
     number: "10",
-    name: "Name to come",
+    name: "Chris",
     image: "/wedding-party/groomsman-dscf1613.jpeg",
     alt: "Groomsman in a dark jacket",
   },
@@ -114,46 +115,48 @@ const groomsmen: PartyPerson[] = [
 
 const bridesmaids: PartyPerson[] = [
   {
-    id: "olivia",
+    id: "brynn",
     number: "01",
+    name: "Brynn",
+    image: "/wedding-party/brynn.jpg",
+    alt: "Brynn on a wooded road",
+    distinction: "Maid of Honor",
+  },
+  {
+    id: "mara",
+    number: "02",
+    name: "Mara",
+    image: "/wedding-party/mara.jpg",
+    alt: "Mara at a flower-filled garden reception",
+    distinction: "Maid of Honor",
+  },
+  {
+    id: "olivia",
+    number: "03",
     name: "Olivia",
     image: "/wedding-party/olivia.jpg",
     alt: "Olivia by the coast at sunset",
   },
   {
     id: "meghan",
-    number: "02",
+    number: "04",
     name: "Meghan",
     image: "/wedding-party/meghan.jpg",
     alt: "Meghan at a coastal overlook",
   },
   {
     id: "sabrina",
-    number: "03",
+    number: "05",
     name: "Sabrina",
     image: "/wedding-party/sabrina.jpg",
     alt: "Sabrina on a cobblestone street",
   },
   {
     id: "ella",
-    number: "04",
+    number: "06",
     name: "Ella",
     image: "/wedding-party/ella.jpg",
     alt: "Ella by the water in a blue patterned top",
-  },
-  {
-    id: "mara",
-    number: "05",
-    name: "Mara",
-    image: "/wedding-party/mara.jpg",
-    alt: "Mara at a flower-filled garden reception",
-  },
-  {
-    id: "brynn",
-    number: "06",
-    name: "Brynn",
-    image: "/wedding-party/brynn.jpg",
-    alt: "Brynn on a wooded road",
   },
   {
     id: "sidney",
@@ -275,7 +278,7 @@ function CarouselCard({
             <circle cx="50" cy="35" r="17" fill="currentColor" />
             <path d="M18 86c3-20 14-31 32-31s29 11 32 31" fill="currentColor" />
           </svg>
-          <span className="relative mt-4 text-[0.58rem] uppercase tracking-[0.2em]">Number {person.number}</span>
+          <span className="relative mt-4 text-[0.58rem] uppercase tracking-[0.2em]">Coming soon</span>
         </span>
       ) : (
         <span
@@ -322,7 +325,6 @@ function CarouselCard({
             {person.comingSoon ? "Groomsman" : role}
           </span>
         </span>
-        <span aria-hidden="true" className="font-serif text-sm tracking-[0.08em] text-[#A0A88F]">{person.number}</span>
       </span>
     </motion.button>
   );

@@ -85,7 +85,7 @@ export default function ScheduleExperience() {
 
       <div className={styles.prologue}>
         <span className={styles.eyebrow}>The prologue</span>
-        <p><strong>Aug 8–12</strong> · Julia & Zach in Stockholm <span aria-hidden="true">/</span> <strong>Aug 12</strong> · Travel to Maryhill</p>
+        <p><strong>Aug 8–12</strong> · Julia & Zach in Stockholm <span aria-hidden="true">/</span> <strong>Aug 12</strong> · Julia & Zach arrive early to Maryhill</p>
       </div>
 
       <section className={`${styles.acts} ${styles[`active${activeDay}`]}`} aria-label="The three days of the wedding weekend">

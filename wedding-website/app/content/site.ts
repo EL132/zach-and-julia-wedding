@@ -40,7 +40,6 @@ export const navigationItems: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/travel", label: "Travel" },
   { href: "/our-people/our-story", label: "Our Story", activeHrefs: ["/our-people/our-story"] },
-  { href: "/our-people/wedding-party", label: "Wedding Party", activeHrefs: ["/our-people/wedding-party"] },
   { href: "/gallery", label: "Gallery" },
   { href: "/rendering", label: "Explore Maryhill" },
   { href: "/schedule", label: "Schedule", activeHrefs: ["/schedule", "/events"] },

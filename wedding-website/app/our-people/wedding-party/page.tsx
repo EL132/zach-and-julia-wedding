@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import WeddingPartyCarousel from "./WeddingPartyReveal";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Wedding Party | Julia & Zach",
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function WeddingPartyPage() {
-  return <WeddingPartyCarousel />;
+  redirect("/");
 }

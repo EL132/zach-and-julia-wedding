@@ -1,6 +1,6 @@
 # Wedding Schedule
 
-Julia and Zach will be in Stockholm August 8–12, 2027. They travel to Maryhill Estate on August 12. Guests are welcome to make their own plans in Stockholm before the wedding weekend; it is not a scheduled wedding event.
+Julia and Zach will be in Stockholm August 8–12, 2027, then arrive early at Maryhill Estate on August 12. Their early arrival is not a scheduled wedding event, and guests do not need to arrive that day. Guests are welcome to make their own plans in Stockholm before the wedding weekend.
 
 The wedding weekend at Maryhill Estate in Glumslöv runs August 14–16, 2027:
 

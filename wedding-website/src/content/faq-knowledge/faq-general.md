@@ -8,7 +8,7 @@ The venue is Maryhill Estate in Glumslöv, Skåne County, Sweden.
 Do you have a registry?  
 We are so grateful to all guests for the investment required to attend an international wedding. Please note that your presence is a priceless gift to us. In the event that you would like to provide a gift, we will be setting up registries in the near term. 
 How long should we plan to travel? 
-Wedding events at Maryhill Estate run August 14–16, 2027: tennis, sauna and cold plunge, and a welcome dinner on August 14; the wedding on August 15; and breakfast / brunch on August 16. Julia and Zach will be in Stockholm August 8–12 and travel to Maryhill on August 12. Event times and gathering locations beyond the tennis courts and sauna will be shared once confirmed.
+Wedding events at Maryhill Estate run August 14–16, 2027: tennis, sauna and cold plunge, and a welcome dinner on August 14; the wedding on August 15; and breakfast / brunch on August 16. Julia and Zach will be in Stockholm August 8–12 and arrive early at Maryhill on August 12. Guests do not need to arrive that day. Event times and gathering locations beyond the tennis courts and sauna will be shared once confirmed.
 Where else should we go if we want to make our trip longer? 
 We recommend Copenhagen, Norway, and Stockholm, though flights within European countries are often affordable and easy - so the possibilities are endless once you are here! 
 What’s the dress code? 
