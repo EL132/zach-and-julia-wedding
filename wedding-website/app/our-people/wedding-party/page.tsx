@@ -5,13 +5,15 @@ import { redirect } from "next/navigation";
 import WeddingPartyCarousel from "./WeddingPartyReveal";
 
 const accessCookie = "wedding-party-access";
-const accessToken = createHash("sha256").update("03/29/2004").digest("hex");
+const correctBirthday = "03/29/2004";
+const accessToken = createHash("sha256").update(correctBirthday).digest("hex");
 
 async function unlockWeddingParty(formData: FormData) {
   "use server";
 
-  const answer = String(formData.get("answer") ?? "").trim();
-  if (answer !== "03/29/2004") {
+  const answer = String(formData.get("answer") ?? "").normalize("NFKC").replace(/\D/g, "");
+  const correctAnswer = correctBirthday.replace(/\D/g, "");
+  if (answer !== correctAnswer) {
     redirect("/our-people/wedding-party?incorrect=1");
   }
 
@@ -69,6 +71,7 @@ export default async function WeddingPartyPage({
           {incorrect ? <p id="answer-error" role="alert" className="mt-2 text-sm text-[#9A3F36]">That answer isn’t correct. Please try again.</p> : null}
           <button
             type="submit"
+            style={{ color: "#F5F2EB" }}
             className="mt-5 w-full rounded-full bg-[#35452C] px-5 py-3 text-sm uppercase tracking-[0.16em] text-[#F5F2EB] transition hover:bg-[#465B39] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#35452C] focus-visible:ring-offset-2"
           >
             View the wedding party
