@@ -31,14 +31,11 @@ type PointerStart = {
 
 const groomsmen: PartyPerson[] = [
   {
-    id: "elias-lind",
+    id: "ben",
     number: "01",
-    name: "Elias Lind",
-    image: "/wedding-party/elias-lind-new.jpg",
-    alt: "Elias Lind outdoors in a white polo shirt",
-    alternateImage: "/wedding-party/elias-lind-blue-sweater.jpg",
-    alternateAlt: "Elias Lind in a blue sweater in the snow",
-    objectPosition: "center 10%",
+    name: "Ben",
+    image: "/wedding-party/ben.jpg",
+    alt: "Ben smiling in a suit",
     distinction: "Best Man",
   },
   {
@@ -52,11 +49,14 @@ const groomsmen: PartyPerson[] = [
     distinction: "Best Man",
   },
   {
-    id: "ben",
+    id: "elias-lind",
     number: "03",
-    name: "Ben",
-    image: "/wedding-party/ben.jpg",
-    alt: "Ben smiling in a suit",
+    name: "Elias Lind",
+    image: "/wedding-party/elias-lind-current.png",
+    alt: "Elias Lind outdoors in a white polo shirt",
+    alternateImage: "/wedding-party/elias-lind-blue-sweater.jpg",
+    alternateAlt: "Elias Lind in a blue sweater in the snow",
+    objectPosition: "center 10%",
     distinction: "Best Man",
   },
   {
