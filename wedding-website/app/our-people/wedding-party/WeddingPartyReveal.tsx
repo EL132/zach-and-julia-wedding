@@ -15,6 +15,7 @@ type PartyPerson = {
   alternateClickCount?: 2 | 3;
   alternateDurationMs?: number;
   distinction?: string;
+  subtitle?: string;
   comingSoon?: boolean;
   objectPosition?: string;
 };
@@ -31,85 +32,87 @@ type PointerStart = {
 
 const groomsmen: PartyPerson[] = [
   {
-    id: "ben",
+    id: "elias-lind",
     number: "01",
+    name: "Elias",
+    image: "/wedding-party/elias-lind-current.png",
+    alt: "Elias outdoors in a green turtleneck",
+    alternateImage: "/wedding-party/elias-lind-blue-sweater.jpg",
+    alternateAlt: "Elias in a blue sweater in the snow",
+    objectPosition: "center 10%",
+    distinction: "Best Man",
+    subtitle: "Best Man · Site Extradorindaire",
+  },
+  {
+    id: "luke",
+    number: "02",
+    name: "Lucas",
+    image: "/wedding-party/groomsman-img-8344.jpeg",
+    alt: "Lucas in a blue striped shirt against a green background",
+    alternateImage: "/wedding-party/luke-alt.jpg",
+    alternateAlt: "Lucas in a casual close-up selfie",
+    distinction: "Best Man",
+  },
+  {
+    id: "ben",
+    number: "03",
     name: "Ben",
     image: "/wedding-party/ben.jpg",
     alt: "Ben smiling in a suit",
     distinction: "Best Man",
   },
   {
-    id: "luke",
-    number: "02",
-    name: "Luke",
-    image: "/wedding-party/groomsman-img-8344.jpeg",
-    alt: "Luke in a blue striped shirt against a green background",
-    alternateImage: "/wedding-party/luke-alt.jpg",
-    alternateAlt: "Luke in a casual close-up selfie",
-    distinction: "Best Man",
-  },
-  {
-    id: "elias-lind",
-    number: "03",
-    name: "Elias Lind",
-    image: "/wedding-party/elias-lind-current.png",
-    alt: "Elias Lind outdoors in a white polo shirt",
-    alternateImage: "/wedding-party/elias-lind-blue-sweater.jpg",
-    alternateAlt: "Elias Lind in a blue sweater in the snow",
-    objectPosition: "center 10%",
-    distinction: "Best Man",
-  },
-  {
-    id: "linus",
-    number: "04",
-    name: "Linus",
-    image: "/wedding-party/groomsman-linus.jpeg",
-    alt: "Linus with his baby on the beach",
-  },
-  {
-    id: "alex",
-    number: "05",
-    name: "Alex",
-    image: "/wedding-party/groomsman-left-portrait.jpeg",
-    alt: "Alex in a light suit by the water",
-  },
-  {
-    id: "skylar",
-    number: "06",
-    name: "Skylar",
-    image: "/wedding-party/groomsman-image.jpg",
-    alt: "Skylar holding a cocktail at a party",
-  },
-  {
     id: "drew",
-    number: "07",
+    number: "04",
     name: "Drew",
     image: "/wedding-party/drew.jpg",
     alt: "Drew taking a mirror selfie while holding his baby",
     alternateImage: "/wedding-party/drew-alt.jpg",
     alternateAlt: "Drew smiling in a close-up photo",
     objectPosition: "center 32%",
+    distinction: "Toastmaster",
   },
   {
-    id: "grant",
-    number: "08",
-    name: "Grant",
-    image: "/wedding-party/grant.jpg",
-    alt: "Grant in a black tuxedo and bow tie",
+    id: "linus",
+    number: "05",
+    name: "Linus",
+    image: "/wedding-party/groomsman-linus.jpeg",
+    alt: "Linus with his baby on the beach",
+  },
+  {
+    id: "alex",
+    number: "06",
+    name: "Alex",
+    image: "/wedding-party/groomsman-left-portrait.jpeg",
+    alt: "Alex in a light suit by the water",
+  },
+  {
+    id: "chris",
+    number: "07",
+    name: "Chris",
+    image: "/wedding-party/groomsman-dscf1613.jpeg",
+    alt: "Chris in a dark jacket",
   },
   {
     id: "fred",
-    number: "09",
+    number: "08",
     name: "Fred",
     image: "/wedding-party/fred.jpg",
     alt: "Fred taking a selfie in a convertible",
   },
   {
-    id: "groomsman-10",
+    id: "skylar",
+    number: "09",
+    name: "Skylar",
+    image: "/wedding-party/groomsman-image.jpg",
+    alt: "Skylar holding a cocktail at a party",
+  },
+  {
+    id: "grant",
     number: "10",
-    name: "Chris",
-    image: "/wedding-party/groomsman-dscf1613.jpeg",
-    alt: "Groomsman in a dark jacket",
+    name: "Grant",
+    image: "/wedding-party/grant.jpg",
+    alt: "Grant in a black tuxedo and bow tie",
   },
 ];
 
@@ -131,11 +134,11 @@ const bridesmaids: PartyPerson[] = [
     distinction: "Maid of Honor",
   },
   {
-    id: "olivia",
+    id: "sabrina",
     number: "03",
-    name: "Olivia",
-    image: "/wedding-party/olivia.jpg",
-    alt: "Olivia by the coast at sunset",
+    name: "Sabrina",
+    image: "/wedding-party/sabrina.jpg",
+    alt: "Sabrina on a cobblestone street",
   },
   {
     id: "meghan",
@@ -145,11 +148,15 @@ const bridesmaids: PartyPerson[] = [
     alt: "Meghan at a coastal overlook",
   },
   {
-    id: "sabrina",
+    id: "sidney",
     number: "05",
-    name: "Sabrina",
-    image: "/wedding-party/sabrina.jpg",
-    alt: "Sabrina on a cobblestone street",
+    name: "Sidney",
+    image: "/wedding-party/sidney.jpg",
+    alt: "Sidney by the water",
+    alternateImage: "/wedding-party/sidney-alt.jpg",
+    alternateAlt: "Sidney in a playful close-up photo",
+    alternateClickCount: 3,
+    alternateDurationMs: 1000,
   },
   {
     id: "ella",
@@ -159,15 +166,18 @@ const bridesmaids: PartyPerson[] = [
     alt: "Ella by the water in a blue patterned top",
   },
   {
-    id: "sidney",
+    id: "ana",
     number: "07",
-    name: "Sidney",
-    image: "/wedding-party/sidney.jpg",
-    alt: "Sidney by the water",
-    alternateImage: "/wedding-party/sidney-alt.jpg",
-    alternateAlt: "Sidney in a playful close-up photo",
-    alternateClickCount: 3,
-    alternateDurationMs: 1000,
+    name: "Ana",
+    image: "/wedding-party/ana.jpg",
+    alt: "Ana in a light floral dress at an overlook",
+  },
+  {
+    id: "olivia",
+    number: "08",
+    name: "Olivia",
+    image: "/wedding-party/olivia.jpg",
+    alt: "Olivia by the coast at sunset",
   },
 ];
 
@@ -309,11 +319,6 @@ function CarouselCard({
           <span className="absolute left-3 top-3 rounded-full border border-white/45 bg-[#273622]/55 px-2.5 py-1 text-[0.52rem] uppercase tracking-[0.18em] text-white backdrop-blur-md">
             {role}
           </span>
-          {person.distinction ? (
-            <span className="absolute bottom-3 right-3 rounded-full border border-[#E1D3A9]/80 bg-[#F8F4EA]/95 px-2.5 py-1 text-[0.54rem] uppercase tracking-[0.16em] text-[#35452C] shadow-sm">
-              {person.distinction}
-            </span>
-          ) : null}
         </span>
       )}
       <span className="flex min-h-[4.75rem] w-full items-center justify-between gap-2 px-4 py-3">
@@ -322,7 +327,7 @@ function CarouselCard({
             {person.comingSoon ? "Coming soon" : person.name}
           </span>
           <span className="mt-1.5 block text-[0.54rem] uppercase tracking-[0.19em] text-[#7A8467]">
-            {person.comingSoon ? "Groomsman" : role}
+            {person.comingSoon ? "Groomsman" : person.subtitle ?? person.distinction ?? role}
           </span>
         </span>
       </span>
