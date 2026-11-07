@@ -5,9 +5,9 @@
 }
 
 .groupPhoto {
-  width: min(60%, 1000px);
+  width: min(60vw, 1000px);
   aspect-ratio: 1.85;
-  margin: 0 auto;
+  margin: 0 auto 2.5rem;
   overflow: hidden;
   background: #e6e4d9;
 }
@@ -146,7 +146,7 @@
 .honorGroup .personRow:first-child { border-top: 0; }
 
 @media (max-width: 760px) {
-  .groupPhoto { width: 100%; aspect-ratio: 1.35; }
+  .groupPhoto { width: 100%; aspect-ratio: 1.35; margin-bottom: 2rem; }
   .groupPhotoImage { object-position: center 48%; }
   .content { width: calc(100% - 2.25rem); padding-top: 1.8rem; }
   .pageHeader { margin-bottom: 1.6rem; }

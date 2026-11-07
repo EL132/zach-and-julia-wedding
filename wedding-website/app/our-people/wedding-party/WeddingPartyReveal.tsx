@@ -59,23 +59,23 @@ export default function WeddingPartyReveal() {
 
   return (
     <main className={styles.page}>
-      <figure className={styles.groupPhoto}>
-        <Image
-          src="/wedding-party/group-photo.jpg"
-          alt="Julia and Zach with family and friends"
-          width={5546}
-          height={3697}
-          priority
-          sizes="100vw"
-          className={styles.groupPhotoImage}
-        />
-      </figure>
-
       <div className={styles.content}>
         <header className={styles.pageHeader}>
           <p>Julia &amp; Zach · Our people</p>
           <h1>The wedding party</h1>
         </header>
+
+        <figure className={styles.groupPhoto}>
+          <Image
+            src="/wedding-party/group-photo.jpg"
+            alt="Julia and Zach with family and friends"
+            width={5546}
+            height={3697}
+            priority
+            sizes="(max-width: 760px) 100vw, 60vw"
+            className={styles.groupPhotoImage}
+          />
+        </figure>
 
         <div className={styles.sides}>
           <section className={styles.side} aria-labelledby="julias-side-title">
