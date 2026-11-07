@@ -56,6 +56,8 @@ function PersonRow({ person }: { person: PartyPerson }) {
 export default function WeddingPartyReveal() {
   const maidsOfHonor = juliaSide.slice(0, 2);
   const bridesmaids = juliaSide.slice(2);
+  const bestMen = zachSide.slice(0, 3);
+  const groomsmen = zachSide.slice(3);
 
   return (
     <main className={styles.page}>
@@ -83,8 +85,8 @@ export default function WeddingPartyReveal() {
               <h2 id="julias-side-title">Julia’s side</h2>
             </div>
 
-            <div className={styles.honorGroup}>
-              <p className={styles.honorLabel}>Maids of Honor</p>
+            <div className={styles.roleGroup}>
+              <p className={styles.roleGroupLabel}>Maids of Honor</p>
               <ul className={styles.roster}>
                 {maidsOfHonor.map((person) => <PersonRow key={person.id} person={person} />)}
               </ul>
@@ -99,8 +101,15 @@ export default function WeddingPartyReveal() {
             <div className={styles.sideHeading}>
               <h2 id="zachs-side-title">Zach’s side</h2>
             </div>
+            <div className={styles.roleGroup}>
+              <p className={styles.roleGroupLabel}>Best Men</p>
+              <ul className={styles.roster}>
+                {bestMen.map((person) => <PersonRow key={person.id} person={person} />)}
+              </ul>
+            </div>
+
             <ul className={styles.roster}>
-              {zachSide.map((person) => <PersonRow key={person.id} person={person} />)}
+              {groomsmen.map((person) => <PersonRow key={person.id} person={person} />)}
             </ul>
           </section>
         </div>
