@@ -88,6 +88,18 @@ export default function TravelPage() {
             </h3>
             <p className="mt-4 text-base leading-7 text-[#2D2923]/78">
               {route.body}
+              {route.scheduleHref ? (
+                <>
+                  {" "}(
+                  <Link
+                    href={route.scheduleHref}
+                    className="font-medium text-[#35452C] underline decoration-[#A8B58A] underline-offset-4 transition-colors hover:text-[#1A1712]"
+                  >
+                    see Schedule
+                  </Link>
+                  )
+                </>
+              ) : null}
             </p>
             <div className="mt-auto pt-7">
               <div className="border-t border-dashed border-[#A8B58A]/65 pt-5">

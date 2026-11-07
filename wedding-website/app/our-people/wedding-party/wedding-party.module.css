@@ -1,0 +1,171 @@
+.page {
+  min-height: 100vh;
+  background: #f8f4ea;
+  color: #2d2923;
+}
+
+.groupPhoto {
+  width: min(100%, 1600px);
+  aspect-ratio: 1.85;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #e6e4d9;
+}
+
+.groupPhotoImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 52%;
+}
+
+.content {
+  width: min(100% - 3rem, 1240px);
+  margin: 0 auto;
+  padding: 2.5rem 0 5rem;
+}
+
+.pageHeader {
+  margin-bottom: 2.2rem;
+}
+
+.pageHeader p {
+  margin: 0;
+  color: #6f7a4b;
+  font-size: 0.65rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.pageHeader h1 {
+  margin: 0.55rem 0 0;
+  color: #35452c;
+  font-family: var(--font-primary), Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4.3rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.sides {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid #a8b58a;
+}
+
+.side {
+  min-width: 0;
+  padding: 1.4rem 2rem 0 0;
+}
+
+.side + .side {
+  border-left: 1px solid #c8ccb9;
+  padding: 1.4rem 0 0 2rem;
+}
+
+.sideHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sideHeading h2 {
+  margin: 0;
+  color: #35452c;
+  font-family: var(--font-primary), Georgia, serif;
+  font-size: clamp(1.7rem, 2.7vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.roster {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.personRow {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr) minmax(6.5rem, auto);
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 4.6rem;
+  border-top: 1px solid #d8d9cd;
+  padding: 0.45rem 0;
+}
+
+.portrait {
+  position: relative;
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  overflow: hidden;
+  background: #e8e6da;
+}
+
+.portraitImage { object-fit: cover; }
+
+.personName {
+  color: #35452c;
+  font-family: var(--font-primary), Georgia, serif;
+  font-size: 1.28rem;
+  line-height: 1.1;
+}
+
+.personRole {
+  color: #6f7a4b;
+  font-size: 0.58rem;
+  letter-spacing: 0.13em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.honorGroup {
+  margin: 0 0 1rem;
+  border-left: 2px solid #6f7a4b;
+  background: #efe7d8;
+  padding: 0.2rem 0.85rem 0.35rem;
+}
+
+.honorLabel {
+  margin: 0.15rem 0 0.25rem;
+  color: #6f7a4b;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.honorGroup .personRow {
+  border-top-color: #d6d4c5;
+}
+
+.honorGroup .personRow:first-child { border-top: 0; }
+
+@media (max-width: 760px) {
+  .groupPhoto { aspect-ratio: 1.35; }
+  .groupPhotoImage { object-position: center 48%; }
+  .content { width: calc(100% - 2.25rem); padding-top: 1.8rem; }
+  .pageHeader { margin-bottom: 1.6rem; }
+  .sides { grid-template-columns: 1fr; }
+  .side { padding: 1.2rem 0 1.5rem; }
+  .side + .side {
+    border-top: 1px solid #a8b58a;
+    border-left: 0;
+    padding: 1.4rem 0 0;
+  }
+  .sideHeading { margin-bottom: 0.8rem; }
+}
+
+@media (max-width: 430px) {
+  .personRow {
+    grid-template-columns: 3rem minmax(0, 1fr) minmax(5rem, auto);
+    gap: 0.65rem;
+  }
+  .portrait { width: 3rem; height: 3rem; }
+  .personName { font-size: 1.18rem; }
+  .personRole { font-size: 0.52rem; letter-spacing: 0.1em; }
+}

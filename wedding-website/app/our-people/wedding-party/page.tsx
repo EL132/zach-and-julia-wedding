@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import WeddingPartyCarousel from "./WeddingPartyReveal";
+import WeddingPartyReveal from "./WeddingPartyReveal";
 
 const accessCookie = "wedding-party-access";
 const correctBirthday = "03/29/2004";
@@ -31,7 +31,7 @@ async function unlockWeddingParty(formData: FormData) {
 
 export const metadata: Metadata = {
   title: "Wedding Party | Julia & Zach",
-  description: "Browse the people standing with Julia and Zach in an interactive photo carousel.",
+  description: "Meet the people standing with Julia and Zach on their wedding day.",
 };
 
 export default async function WeddingPartyPage({
@@ -41,7 +41,7 @@ export default async function WeddingPartyPage({
 }) {
   const cookieStore = await cookies();
   if (cookieStore.get(accessCookie)?.value === accessToken) {
-    return <WeddingPartyCarousel />;
+    return <WeddingPartyReveal />;
   }
 
   const { incorrect } = await searchParams;

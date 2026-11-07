@@ -39,10 +39,10 @@ export type NavItem = {
 export const navigationItems: NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/travel", label: "Travel" },
+  { href: "/schedule", label: "Schedule", activeHrefs: ["/schedule", "/events"] },
   { href: "/our-people/our-story", label: "Our Story", activeHrefs: ["/our-people/our-story"] },
   { href: "/gallery", label: "Gallery" },
   { href: "/rendering", label: "Explore Maryhill" },
-  { href: "/schedule", label: "Schedule", activeHrefs: ["/schedule", "/events"] },
   { href: "/registry", label: "Registry" },
   { href: "/faqs", label: "FAQs" },
 ];
@@ -215,6 +215,7 @@ export const travelContent = {
       heading: "Fly into Copenhagen Airport",
       label: "Recommended",
       body: "Best for guests coming directly to the celebration.",
+      scheduleHref: undefined,
       routeHint: "CPH → Glumslöv → Maryhill",
     },
     {
@@ -222,6 +223,7 @@ export const travelContent = {
       heading: "Arrive through Stockholm",
       body:
         "Best for guests joining earlier plans before traveling south for the wedding weekend.",
+      scheduleHref: "/schedule",
       routeHint: "Stockholm → Glumslöv → Maryhill",
     },
   ],

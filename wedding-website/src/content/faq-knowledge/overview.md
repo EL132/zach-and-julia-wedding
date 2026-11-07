@@ -1,6 +1,6 @@
 # Wedding Overview
 
-We can’t wait to celebrate with you in Sweden! Our wedding weekend at Maryhill Estate runs August 14–16, 2027: tennis, sauna and cold plunge, and a welcome dinner on August 14; the wedding on August 15; and breakfast / brunch on August 16. Exact times will follow. We know international travel takes some planning, so this guide includes everything guests need to know to get to Maryhill Estate in Glumslöv, Sweden with ease.
+We can’t wait to celebrate with you in Sweden! Our wedding weekend at Maryhill Estate runs August 14–16, 2027: tennis, sauna and cold plunge, and a welcome dinner on August 14; the wedding on August 15; and brunch on August 16. Exact times will follow. We know international travel takes some planning, so this guide includes everything guests need to know to get to Maryhill Estate in Glumslöv, Sweden with ease.
 
 The Venue
 

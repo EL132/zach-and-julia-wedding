@@ -1,131 +1,114 @@
-"use client";
-
-import { useState } from "react";
 import styles from "./schedule.module.css";
 
-type Day = "14" | "15" | "16";
-
-type Event = {
-  name: string;
+type TimelineRow = {
+  weekday: string;
+  date: string;
+  label?: string;
+  description?: string;
+  events?: string[];
+  note?: string;
+  weddingWeekend?: boolean;
+  weekendStart?: boolean;
+  weddingDay?: boolean;
+  weekendEnd?: boolean;
 };
 
-type Act = {
-  day: Day;
-  label: string;
-  title: string;
-  events: Event[];
-  note: string;
-};
-
-const acts: Act[] = [
+const timeline: TimelineRow[] = [
   {
-    day: "14",
-    label: "The welcome",
-    title: "Come together",
-    events: [
-      { name: "Tennis tournament" },
-      { name: "Sauna & cold plunge" },
-      { name: "Welcome dinner" },
-    ],
+    weekday: "Sunday–Wednesday",
+    date: "August 8–11",
+    label: "Optional Stockholm plans",
+    description:
+      "Julia & Zach will be in Stockholm. Guests are welcome to join them, but there’s no need to arrive early for these plans.",
+  },
+  {
+    weekday: "Thursday",
+    date: "August 12",
+    label: "Julia & Zach arrive at Maryhill",
+    note: "Guests do not need to arrive this day.",
+  },
+  {
+    weekday: "Friday",
+    date: "August 13",
+    label: "Guest travel & arrival",
+    description: "A day to travel to Maryhill and get settled before Saturday’s wedding weekend plans. No group events are listed.",
+  },
+  {
+    weekday: "Saturday",
+    date: "August 14",
+    weddingWeekend: true,
+    weekendStart: true,
+    label: "Wedding weekend begins",
+    events: ["Tennis tournament", "Sauna & cold plunge", "Welcome dinner"],
     note: "Dinner location and event times to follow.",
   },
   {
-    day: "15",
-    label: "The moment",
-    title: "Wedding Day",
-    events: [{ name: "Julia & Zach get married" }],
+    weekday: "Sunday",
+    date: "August 15",
+    weddingWeekend: true,
+    weddingDay: true,
+    label: "Wedding day",
+    events: ["Julia & Zach get married"],
     note: "Location and time to follow.",
   },
   {
-    day: "16",
-    label: "The morning after",
-    title: "Stay a little",
-    events: [{ name: "Breakfast & brunch" }],
+    weekday: "Monday",
+    date: "August 16",
+    weddingWeekend: true,
+    weekendEnd: true,
+    events: ["Brunch"],
     note: "Location and time to follow.",
   },
 ];
 
-// The tennis courts and sauna are the only confirmed spots in the 1800 × 1400 estate rendering.
-const confirmedSpots = [
-  { name: "tennis", x: 1020, y: 575 },
-  { name: "sauna", x: 420, y: 662 },
-];
-
-function EstateMap({ day }: { day: Day }) {
-  return (
-    <span className={styles.actMap} aria-hidden="true">
-      <svg viewBox="0 0 1800 1400" preserveAspectRatio="xMidYMid meet">
-        <image href="/rendering/maryhill-estate-poster.webp" x="0" y="0" width="1800" height="1400" />
-        {day === "14" && confirmedSpots.map((spot) => (
-          <g key={spot.name} className={styles.mapPin} transform={`translate(${spot.x} ${spot.y})`}>
-            <circle className={styles.pinHalo} cy="-62" r="55" />
-            <path className={styles.pinBody} d="M0 0 C-18-25 -38-41 -38-62 C-38-83 -21-100 0-100 C21-100 38-83 38-62 C38-41 18-25 0 0 Z" />
-            <circle className={styles.pinCenter} cy="-62" r="13" />
-          </g>
-        ))}
-      </svg>
-    </span>
-  );
-}
-
 export default function ScheduleExperience() {
-  const [activeDay, setActiveDay] = useState<Day>("14");
-
   return (
     <main className={styles.page}>
-      <div className={styles.masthead}>
-        <span>Julia & Zach</span>
-        <span>Maryhill Estate · August 2027</span>
-      </div>
+      <section className={styles.scheduleSection} aria-labelledby="schedule-title">
+        <h1 id="schedule-title">August 2027</h1>
 
-      <section className={styles.intro} aria-labelledby="schedule-title">
-        <p className={styles.eyebrow}>August 14–16, 2027</p>
-        <h1 id="schedule-title">Wedding<br /><em>weekend</em></h1>
+        <table className={styles.itinerary}>
+          <caption className={styles.visuallyHidden}>Julia and Zach’s wedding timeline for August 2027</caption>
+          <thead>
+            <tr>
+              <th scope="col">Date &amp; day</th>
+              <th scope="col">Plans</th>
+            </tr>
+          </thead>
+          <tbody>
+            {timeline.map((row) => (
+              <tr
+                key={row.date}
+                className={[
+                  row.weddingWeekend ? styles.weddingRow : "",
+                  row.weekendStart ? styles.weekendStartRow : "",
+                  row.weddingDay ? styles.weddingDayRow : "",
+                  row.weekendEnd ? styles.weekendEndRow : "",
+                ].filter(Boolean).join(" ") || undefined}
+              >
+                <th scope="row" className={styles.dateCell}>
+                  <span>{row.weekday}</span>
+                  <span>{row.date}</span>
+                  {row.label ? <span className={styles.mobileLabel}>{row.label}</span> : null}
+                </th>
+                <td className={styles.planCell}>
+                  <div className={styles.planCopy}>
+                    {row.label ? <p className={styles.planLabel}>{row.label}</p> : null}
+                    {row.description ? <p className={styles.description}>{row.description}</p> : null}
+                    {row.events ? (
+                      <ul className={styles.eventList}>
+                        {row.events.map((event) => <li key={event}>{event}</li>)}
+                      </ul>
+                    ) : null}
+                    {row.note ? <p className={styles.note}>{row.note}</p> : null}
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
       </section>
-
-      <div className={styles.prologue}>
-        <span className={styles.eyebrow}>The prologue</span>
-        <p><strong>Aug 8–12</strong> · Julia & Zach in Stockholm <span aria-hidden="true">/</span> <strong>Aug 12</strong> · Julia & Zach arrive early to Maryhill</p>
-      </div>
-
-      <section className={`${styles.acts} ${styles[`active${activeDay}`]}`} aria-label="The three days of the wedding weekend">
-        {acts.map((act) => (
-          <button
-            key={act.day}
-            type="button"
-            className={`${styles.act} ${styles[`act${act.day}`]} ${activeDay === act.day ? styles.actActive : ""}`}
-            onMouseEnter={() => setActiveDay(act.day)}
-            onFocus={() => setActiveDay(act.day)}
-            onClick={() => setActiveDay(act.day)}
-            aria-pressed={activeDay === act.day}
-          >
-            <EstateMap day={act.day} />
-            <span className={styles.actShade} aria-hidden="true" />
-            <span className={styles.actTop}>
-              <span className={styles.eyebrow}>{act.label}</span>
-              <span className={styles.actDate}>August {act.day}, 2027</span>
-            </span>
-            <span className={styles.mapHint} aria-hidden="true">
-              {act.day === "14" ? "Focus areas · Tennis courts & sauna" : "Maryhill Estate · exact spot to follow"}
-            </span>
-            <span className={styles.actCopy}>
-              <span className={styles.actNumber} aria-hidden="true">{act.day}</span>
-              <span className={styles.actTitle}>{act.title}</span>
-              <span className={styles.actEvents}>
-                {act.events.map((event) => (
-                  <span key={event.name} className={styles.eventLine}>
-                    <span className={styles.eventMarker} aria-hidden="true">•</span>
-                    <span>{event.name}</span>
-                  </span>
-                ))}
-              </span>
-              <span className={styles.actNote}>{act.note}</span>
-            </span>
-          </button>
-        ))}
-      </section>
-
-      <p className={styles.scheduleNote}>Map pins show the confirmed focus areas. We’ll add the remaining gathering locations and times as plans are finalized.</p>
     </main>
   );
 }
