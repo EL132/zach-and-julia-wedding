@@ -11,12 +11,12 @@ type PartyPerson = {
 };
 
 const juliaSide: PartyPerson[] = [
-  { id: "brynn", name: "Brynn", image: "/wedding-party/brynn.jpg", alt: "Brynn on a wooded road", role: "Maid of Honor" },
-  { id: "mara", name: "Mara", image: "/wedding-party/mara.jpg", alt: "Mara at a flower-filled garden reception", role: "Maid of Honor" },
-  { id: "sabrina", name: "Sabrina", image: "/wedding-party/sabrina.jpg", alt: "Sabrina on a cobblestone street" },
+  { id: "brynn", name: "Brynn", image: "/wedding-party/brynn-lisbon.png", alt: "Brynn on a balcony overlooking Lisbon", role: "Maid of Honor" },
+  { id: "mara", name: "Mara", image: "/wedding-party/sabrina.jpg", alt: "Mara on a cobblestone street", role: "Maid of Honor" },
+  { id: "sabrina", name: "Sabrina", image: "/wedding-party/ella.jpg", alt: "Sabrina by the water on the coast" },
   { id: "meghan", name: "Meghan", image: "/wedding-party/meghan.jpg", alt: "Meghan at a coastal overlook" },
   { id: "sidney", name: "Sidney", image: "/wedding-party/sidney.jpg", alt: "Sidney by the water" },
-  { id: "ella", name: "Ella", image: "/wedding-party/ella.jpg", alt: "Ella by the water in a blue patterned top" },
+  { id: "ella", name: "Ella", image: "/wedding-party/mara.jpg", alt: "Ella at a flower-filled garden reception" },
   { id: "ana", name: "Ana", image: "/wedding-party/ana.jpg", alt: "Ana in a light floral dress at an overlook" },
   { id: "olivia", name: "Olivia", image: "/wedding-party/olivia.jpg", alt: "Olivia by the coast at sunset" },
 ];
